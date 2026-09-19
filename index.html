@@ -175,7 +175,6 @@
             <p class="project__desc">A tool-calling agent for order and product lookups on Shopify, extending the same agent foundation into e-commerce support.</p>
             <a class="project__case-link" href="case-study-shopify-agent.html">Read the case study &rarr;</a>
           </div>
-          <div class="project__meta">
             <span class="project__status">Built & tested</span>
             <div class="project__tags">
               <span>LangGraph</span><span>Shopify API</span>
@@ -208,11 +207,12 @@
             <p class="project__desc">Combining finite element analysis with a deep-learning classifier to detect knee osteoarthritis, bridging structural simulation and computer vision.</p>
           </div>
           <div class="project__meta">
-            <span class="project__status">MS thesis research</span>
-            <div class="project__tags">
-              <span>FEA</span><span>Deep Learning</span><span>Medical Imaging</span>
-            </div>
+          <span class="project__status project__status--live">Research complete</span>
+          <div class="project__tags">
+            <span>FEA</span><span>Deep Learning</span><span>Medical Imaging</span>
           </div>
+          <a class="project__case-link" href="case-study-knee-oa.html">Read the case study &rarr;</a>
+        </div>
         </article>
 
         
@@ -317,5 +317,141 @@
 </footer>
 
 <script src="script.js"></script>
+<!-- ===================== CHAT WIDGET ===================== -->
+<style>
+#chat-bubble { position:fixed; bottom:28px; right:28px; z-index:9999; }
+#chat-toggle {
+  height:54px; padding:0 20px; border-radius:30px; background:#0C2036; border:1px solid rgba(194,70,31,0.4);
+  cursor:pointer; display:flex; align-items:center; gap:10px;
+  box-shadow:0 4px 20px rgba(12,32,54,0.5); transition:transform 0.2s, box-shadow 0.2s;
+  white-space:nowrap;
+}
+#chat-toggle:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(12,32,54,0.7); border-color:rgba(194,70,31,0.7); }
+#chat-toggle .ct-label {
+  color:#fff; font-family:'IBM Plex Sans',sans-serif;
+  font-size:1rem; font-weight:700; letter-spacing:0.01em;
+}
+#chat-box {
+  position:absolute; bottom:68px; right:0; width:320px;
+  background:#0C2036; border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.45);
+  display:none; flex-direction:column;
+}
+#chat-box.open { display:flex; }
+#chat-head {
+  background:#0a1b2e; padding:14px 16px; display:flex;
+  align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+#chat-head span { color:#E4ECF3; font-family:'IBM Plex Sans',sans-serif; font-size:0.9rem; font-weight:600; }
+#chat-head small { color:#7a9ab5; font-size:0.75rem; display:block; margin-top:2px; }
+#chat-close { background:none; border:none; color:#7a9ab5; font-size:1.3rem; cursor:pointer; line-height:1; padding:0; }
+#chat-close:hover { color:#E4ECF3; }
+#chat-msgs {
+  flex:1; padding:16px; overflow-y:auto; max-height:280px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.msg { font-family:'IBM Plex Sans',sans-serif; font-size:0.85rem; line-height:1.55; max-width:88%; }
+.msg--user { align-self:flex-end; background:#C2461F; color:#fff; padding:8px 12px; border-radius:12px 12px 2px 12px; }
+.msg--bot { align-self:flex-start; background:rgba(255,255,255,0.07); color:#E4ECF3; padding:8px 12px; border-radius:12px 12px 12px 2px; }
+.msg--typing { color:#7a9ab5; font-style:italic; }
+#chat-footer { padding:10px 12px; border-top:1px solid rgba(255,255,255,0.08); display:flex; gap:8px; }
+#chat-input {
+  flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+  border-radius:4px; color:#E4ECF3; font-family:'IBM Plex Sans',sans-serif;
+  font-size:0.85rem; padding:8px 10px; outline:none;
+}
+#chat-input::placeholder { color:#4a6a85; }
+#chat-input:focus { border-color:#C2461F; }
+#chat-send {
+  background:#C2461F; border:none; color:#fff; font-family:'IBM Plex Sans',sans-serif;
+  font-size:0.82rem; font-weight:600; padding:8px 14px; border-radius:4px; cursor:pointer;
+}
+#chat-send:hover { background:#a83b1a; }
+#chat-send:disabled { opacity:0.5; cursor:not-allowed; }
+</style>
+
+<div id="chat-bubble">
+  <div id="chat-box">
+    <div id="chat-head">
+      <div>
+        <span>Ask about Affan</span>
+        <small>AI assistant · usually instant</small>
+      </div>
+      <button id="chat-close" aria-label="Close chat">×</button>
+    </div>
+    <div id="chat-msgs">
+      <div class="msg msg--bot">Hi! Ask me anything about Affan's work, projects, or how to get in touch.</div>
+    </div>
+    <div id="chat-footer">
+      <input id="chat-input" type="text" placeholder="Your question..." maxlength="300" autocomplete="off">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <button id="chat-toggle" aria-label="Open chat assistant">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="7" width="14" height="10" rx="2" fill="white"/>
+      <line x1="12" y1="4" x2="12" y2="7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="12" cy="3.2" r="1.5" fill="white"/>
+      <circle cx="9" cy="11" r="1.5" fill="#C2461F"/>
+      <circle cx="15" cy="11" r="1.5" fill="#C2461F"/>
+      <rect x="8.5" y="13.5" width="7" height="1.5" rx="0.75" fill="#C2461F"/>
+      <rect x="2.5" y="9.5" width="2.5" height="4" rx="1" fill="white"/>
+      <rect x="19" y="9.5" width="2.5" height="4" rx="1" fill="white"/>
+    </svg>
+    <span class="ct-label">Ask Affan AI</span>
+  </button>
+</div>
+
+<script>
+(function(){
+  const toggle = document.getElementById('chat-toggle');
+  const box    = document.getElementById('chat-box');
+  const close  = document.getElementById('chat-close');
+  const msgs   = document.getElementById('chat-msgs');
+  const input  = document.getElementById('chat-input');
+  const send   = document.getElementById('chat-send');
+
+  toggle.addEventListener('click', () => box.classList.toggle('open'));
+  close.addEventListener('click',  () => box.classList.remove('open'));
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'msg msg--' + type;
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+
+  async function sendMsg() {
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    send.disabled = true;
+    addMsg(text, 'user');
+    const typing = addMsg('Typing…', 'bot msg--typing');
+    try {
+      const res  = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+      const data = await res.json();
+      typing.remove();
+      addMsg(data.reply || data.error || 'Something went wrong.', 'bot');
+    } catch(e) {
+      typing.remove();
+      addMsg('Network error. Please email affanned399@gmail.com', 'bot');
+    }
+    send.disabled = false;
+    input.focus();
+  }
+
+  send.addEventListener('click', sendMsg);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+})();
+</script>
 </body>
 </html>

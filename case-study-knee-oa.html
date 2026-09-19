@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knee OA Detection — MS Thesis — Affan Ahmed Khan</title>
+<meta name="description" content="MS thesis research: detecting knee osteoarthritis using Swin Transformer, EfficientNet, and ResNet backbones with LP-FT training, TTA, and FEA feature fusion.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C2036'/><circle cx='16' cy='16' r='9' fill='none' stroke='%23C2461F' stroke-width='2'/><line x1='16' y1='3' x2='16' y2='9' stroke='%23E4ECF3' stroke-width='2'/><line x1='16' y1='23' x2='16' y2='29' stroke='%23E4ECF3' stroke-width='2'/></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="15" cy="15" r="9.5" stroke-width="1.6"/>
+        <line x1="15" y1="1.5" x2="15" y2="7.5" stroke-width="1.6"/>
+        <line x1="15" y1="22.5" x2="15" y2="28.5" stroke-width="1.6"/>
+        <line x1="1.5" y1="15" x2="7.5" y2="15" stroke-width="1.6"/>
+        <line x1="22.5" y1="15" x2="28.5" y2="15" stroke-width="1.6"/>
+        <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>
+        Affan Ahmed Khan
+        <small>AI Engineer</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <span class="status-pill"><span class="status-pill__dot" aria-hidden="true"></span>Available for freelance work</span>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteHeader">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== CASE HERO ===================== -->
+  <section class="hero case-hero" id="top">
+    <div class="wrap case-hero__grid">
+      <div class="case-hero__text">
+        <a class="case-back" href="index.html#work">&larr; All work</a>
+        <p class="eyebrow hero__eyebrow">MS Thesis &middot; Computer Vision &middot; NED University</p>
+        <h1 class="hero__name">Knee OA Detection</h1>
+        <p class="hero__role">Detecting knee osteoarthritis by combining finite element stress analysis with transformer and CNN-based classification.</p>
+        <p class="hero__lede">Master's thesis research comparing three deep-learning backbones — Swin-Tiny, EfficientNet-B3, and ResNet-50 — for binary knee OA detection. Trained with a two-stage LP&#8209;FT strategy, WeightedRandomSampler for class imbalance, cosine annealing, and Test Time Augmentation. Explores fusing biomechanical FEA features with vision transformer classification — domain expertise from mechanical engineering applied directly to medical AI.</p>
+
+        <div class="case-meta">
+          <span class="project__status project__status--live">Research complete</span>
+          <p class="case-meta__stack"><strong>Stack:</strong> PyTorch &middot; Swin Transformer &middot; EfficientNet &middot; ResNet &middot; ANSYS &middot; OpenCV</p>
+        </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="mailto:affanned399@gmail.com">Discuss the research</a>
+          <a class="btn btn--ghost" href="#methodology">See the methodology</a>
+        </div>
+      </div>
+
+      <div class="case-hero__img">
+        <img src="thesis_face.png" alt="Knee OA Detection — model output on knee X-ray" class="case-hero__photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== METHODOLOGY ===================== -->
+  <section class="proof" id="methodology">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The methodology, not a claim</h2>
+        <p class="eyebrow">Research pipeline</p>
+      </div>
+
+      <div class="diagram-scroll">
+        <img src="thesis_method.png" alt="Knee OA detection research methodology and pipeline" class="pipeline-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESEARCH PHASES ===================== -->
+  <section class="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Research phases</h2>
+        <p class="eyebrow">Five stages, one model</p>
+      </div>
+      <div class="pipeline-steps">
+        <article class="pstep">
+          <p class="pstep__no">01 / 05</p>
+          <h3>Dataset</h3>
+          <p>Knee X-ray images sourced from the OAI (Osteoarthritis Initiative) dataset, labeled for binary OA classification — normal vs. osteoarthritic.</p>
+        </article>
+        <article class="pstep">
+          <p class="pstep__no">02 / 05</p>
+          <h3>Preprocessing</h3>
+          <p>WeightedRandomSampler applied to handle class imbalance. Images normalized and augmented — flips, rotations, contrast — to improve generalization.</p>
+        </article>
+        <article class="pstep">
+          <p class="pstep__no">03 / 05</p>
+          <h3>FEA Fusion</h3>
+          <p>Finite element model of the knee joint built in ANSYS to extract stress and strain maps. FEA-derived features fused with vision backbone inputs for richer representation.</p>
+        </article>
+        <article class="pstep">
+          <p class="pstep__no">04 / 05</p>
+          <h3>LP&#8209;FT Training</h3>
+          <p>Two-stage strategy: first Linear Probing (freeze backbone, train head), then Full Fine-Tuning. Cosine annealing LR schedule. BCE and Focal Loss both evaluated.</p>
+        </article>
+        <article class="pstep">
+          <p class="pstep__no">05 / 05</p>
+          <h3>Evaluation</h3>
+          <p>Three backbones compared — Swin-Tiny, EfficientNet-B3, ResNet-50. Test Time Augmentation applied at inference. Metrics: accuracy, AUC, F1, confusion matrix.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESULTS ===================== -->
+  <section class="proof" id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Results at a glance</h2>
+        <p class="eyebrow">Model comparison &amp; findings</p>
+      </div>
+
+      <div class="inaction-grid">
+        <div class="inaction-img">
+          <img src="thesis_results.png" alt="Knee OA detection model results and comparison" class="inaction-photo">
+        </div>
+
+        <div class="inaction-flow">
+          <div class="flow-step">
+            <span class="flow-step__label">Research question</span>
+            <p class="flow-step__note">Can biomechanical FEA features improve deep-learning OA detection accuracy over imaging alone?</p>
+          </div>
+          <div class="flow-step">
+            <span class="flow-step__label">Backbones compared</span>
+            <p class="flow-step__note"><code>Swin-Tiny</code> &mdash; vision transformer, global attention &nbsp;·&nbsp; <code>EfficientNet-B3</code> &mdash; efficient scaling &nbsp;·&nbsp; <code>ResNet-50</code> &mdash; CNN baseline</p>
+          </div>
+          <div class="flow-step">
+            <span class="flow-step__label">Training strategy</span>
+            <p class="flow-step__note">LP&#8209;FT outperformed end-to-end fine-tuning from scratch across all three backbones. Focal Loss handled class imbalance better than BCE in OA-heavy splits.</p>
+          </div>
+          <div class="flow-step">
+            <span class="flow-step__label">TTA effect</span>
+            <p class="flow-step__note">Test Time Augmentation consistently improved AUC at inference with no additional training cost — particularly on borderline OA cases.</p>
+          </div>
+          <div class="flow-step flow-step--approved">
+            <span class="flow-step__label">Key finding</span>
+            <p class="flow-step__note">FEA-fused features added biomechanical context not visible in X-ray alone — stress concentration patterns aligned with clinically graded OA regions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIGNIFICANCE ===================== -->
+  <section class="about">
+    <div class="wrap">
+      <h2>Why this research matters</h2>
+      <div class="about__body">
+        <p>Knee osteoarthritis affects over 250 million people globally. Most detection tools rely on radiologist-graded X-rays alone — a slow, subjective process. <strong>Automating early detection could change when patients receive intervention.</strong></p>
+        <p>The novel contribution here is the FEA fusion: instead of treating the knee as an image, the model incorporates biomechanical stress data from a finite element simulation. This encodes domain knowledge — how a degraded joint distributes force — into the learning pipeline. Few papers attempt this combination.</p>
+        <p>The LP&#8209;FT training strategy and TTA setup are directly applicable beyond knee OA — any medical imaging task with small, imbalanced datasets benefits from the same approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STACK ===================== -->
+  <section class="case-stack">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tools &amp; methods</h2>
+        <p class="eyebrow">Research stack</p>
+      </div>
+      <div class="tag-list">
+        <span>Python</span><span>PyTorch</span><span>Swin Transformer</span><span>EfficientNet-B3</span>
+        <span>ResNet-50</span><span>ANSYS Mechanical</span><span>OpenCV</span><span>scikit-learn</span>
+        <span>NumPy</span><span>Matplotlib</span><span>LP&#8209;FT</span><span>TTA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING CTA ===================== -->
+  <section class="contact">
+    <div class="wrap">
+      <div class="contact__intro">
+        <h2>Interested in biomechanical AI research?</h2>
+        <p>Open to research collaborations, freelance work combining FEA with AI, or medical imaging projects. Background in mechanical engineering (NED, BE) and AI (NED, MS) — this is the overlap I work in.</p>
+        <div class="contact__actions">
+          <a class="btn btn--solid" href="mailto:affanned399@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="https://wa.me/923242639275" target="_blank" rel="noopener">
+            <svg class="btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="#25D366"/>
+              <rect x="5" y="6" width="14" height="10" rx="4" stroke="#fff" stroke-width="1.5" fill="none"/>
+              <polygon points="9,16 9,19.5 12.5,16" fill="#fff"/>
+              <circle cx="8.5" cy="11" r="1" fill="#fff"/>
+              <circle cx="12" cy="11" r="1" fill="#fff"/>
+              <circle cx="15.5" cy="11" r="1" fill="#fff"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="contact__links">
+          <a href="index.html#work">&larr; Back to all work</a>
+        </div>
+      </div>
+
+      <dl class="title-block">
+        <div class="title-block__cell">
+          <dt>Project</dt>
+          <dd>Knee OA Detection</dd>
+        </div>
+        <div class="title-block__cell">
+          <dt>Type</dt>
+          <dd>MS Thesis &mdash; NED University</dd>
+        </div>
+        <div class="title-block__cell">
+          <dt>Role</dt>
+          <dd>Sole researcher</dd>
+        </div>
+        <div class="title-block__cell">
+          <dt>Contact</dt>
+          <dd>affanned399@gmail.com</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year">2026</span> Affan Ahmed Khan.</p>
+    <p>Built with an agentic AI stack, by hand.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

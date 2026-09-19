@@ -257,6 +257,7 @@ h1, h2, h3 {
 .hero__eyebrow {
   color: var(--blue-muted);
   margin-bottom: 18px;
+  font-size: 15px;
 }
 .hero__name {
   font-size: clamp(2.6rem, 5.4vw, 4.1rem);
@@ -290,7 +291,7 @@ h1, h2, h3 {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 15.5px;
   letter-spacing: 0.01em;
   padding: 13px 20px;
   border-radius: var(--radius);
@@ -339,7 +340,7 @@ h1, h2, h3 {
   left: 0;
   bottom: -30px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 15px;
   color: var(--blue-muted);
   letter-spacing: 0.02em;
 }
@@ -496,11 +497,11 @@ section { padding-block: 96px; }
   border: 1px solid var(--paper-line);
   color: var(--muted);
 }
-.project__status--live { color: var(--mid); border-color: rgba(47,143,134,0.35); background: var(--mid-soft); }
-.project__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+.project__status--live {
+  color: #22C55E;
+  background: rgba(34, 197, 94, 0.10);
+  border-color: rgba(34, 197, 94, 0.35);
+  font-weight: 600;
 }
 .project__tags span {
   font-family: var(--font-mono);
