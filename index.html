@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Affan Ahmed Khan — AI Engineer</title>
-<meta name="description" content="Affan Ahmed Khan — AI engineer. Agentic AI systems, RAG, and biomechanical FEA/CAD, built with production-grade rigor.">
+<meta name="description" content="Affan Ahmed Khan — AI engineer. Agentic AI systems, & RAG, built with production-grade rigor.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,101 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C2036'/><circle cx='16' cy='16' r='9' fill='none' stroke='%23C2461F' stroke-width='2'/><line x1='16' y1='3' x2='16' y2='9' stroke='%23E4ECF3' stroke-width='2'/><line x1='16' y1='23' x2='16' y2='29' stroke='%23E4ECF3' stroke-width='2'/></svg>">
+
+<style>
+  /* ============================================================
+     Page-scoped overrides — index.html only. style.css itself is
+     out of scope this round, so anything that needs fixing purely
+     on this page is handled here. This block loads after style.css,
+     so same-specificity rules below win by normal cascade order —
+     no !important needed, and nothing in style.css has to change.
+     ============================================================ */
+
+  /* Hero right-block alignment: the grid was centering hero__visual
+     against hero__copy (which is taller), so the photo floated
+     mid-height instead of lining up with the top of the headline.
+     "start" matches how the case-study hero grids already align.
+     The column ratio is also shifted toward the visual side — the
+     photo is flex:1 (it eats whatever the grid gives that column)
+     and the panel is a fixed 178px, so widening this column feeds
+     entirely into the photo. Tuned for ~1.2x the photo's old size
+     at desktop widths; it scales down proportionally on narrower
+     screens same as before, and mobile still uses its own 260px
+     stacked layout below 760px. */
+  .hero .wrap { grid-template-columns: 1fr; margin-left: 80px; }
+  .hero__visual { order: 0; }
+  .hero__photo-wrap { aspect-ratio: 4 / 3; max-width: 480px; flex: 0 0 auto; }
+  .about__photo { width: 100%; max-width: 420px; border-radius: 8px; }
+  .about__intro { font-size: 1.5em !important; }
+  .about__heading { font-size: 2em !important; }
+  .about__photo-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .yt-btn { font-size: 30.5px !important; padding: 19.4px 34.8px !important; }
+  .yt-btn__icon { width: 32.4px !important; height: 32.4px !important; }
+  .cb-btn { padding: 19.2px 21.6px !important; }
+  .about__body p { text-align: justify !important; }
+  .sheet p { text-align: justify !important; }
+  .yt-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; color: #0C2036 !important; background: #ffffff !important; border: 1px solid rgba(12,32,54,0.25) !important; border-radius: 6px !important; text-decoration: none !important; padding: 14.4px 28.8px !important; font-size: 22.5px !important; }
+  .yt-btn__icon { width: 32.4px !important; height: 32.4px !important; }
+  #chatbots-panel { flex: 0 0 auto; max-width: 480px; }
+
+  /* YouTube button: was stretched to the full row width, read as an
+     oversized bar. Sized to its own content, and left-aligned so it
+     sits directly under the photo instead of centered under the
+     whole row — toned down a step so it stays secondary to the
+     chat card. */
+  .yt-btn {
+    display: inline-flex;
+    align-self: flex-start;
+    width: auto;
+    padding: 8px 16px;
+    font-size: 12.5px;
+  }
+  .yt-btn__icon { width: 18px; height: 18px; }
+
+    /* "My Chatbots" heading, bumped to 1.4x its old 12.5px. */
+    .cb-heading { font-size: 22.5px; color: #22D3EE; letter-spacing: 0.06em; }
+  .hero__name { text-wrap: balance; }
+
+  /* .hero__row { gap: 70px; } */
+
+  /* Readability pass: raising label-tier text that was sitting
+     under 13px. .hero__eyebrow is untouched — it keeps its own
+     15px because it's never inside a .section-head. */
+  .brand { font-size: 22.2px; white-space: nowrap; }
+  .site-nav__list a { font-size: 19.99px; }
+  .brand small { font-size: 16.25px; display: inline !important; }
+    /* .brand small { font-size: 16.25px; display: inline !important; } */
+  .site-nav { margin-left: 170px; }
+  .status-pill { font-size: 13px; }
+  .spec-strip__label { font-size: 12.5px; }
+  .section-head .eyebrow { font-size: 13.5px; }
+  .services .eyebrow { font-size: 24.3px !important; }
+  .work .eyebrow { font-size: 22.95px !important; }
+  .sheet__no { font-size: 16.9px; }
+  .sheet h3 { font-size: 1.3em !important; }
+  .project__status { font-size: 12px; }
+  .project__tags span { font-size: 12px; }
+  .skill-group__label { font-size: 13px; }
+  .tag-list span { font-size: 14px; padding: 7px 11px; }
+  .title-block__cell dt { font-size: 11px; }
+  .title-block__cell dd { font-size: 14px; }
+  .site-footer p { font-size: 12.5px; }
+
+  /* Darker "Built & tested" pill — the old green (#22C55E on a
+     pale green wash) sat around 1.9:1 contrast. This reads clearly
+     at roughly 6:1. */
+  .project__status--live {
+    color: #166534;
+    background: rgba(22, 101, 52, 0.10);
+    border-color: rgba(22, 101, 52, 0.35);
+  }
+    .site-header .wrap { justify-content: flex-start; gap: 20px; margin-left: 80px; }
+  /* .site-nav { margin-left:299px; } */
+  .hero__copy { text-align: left; }
+  .hero__lede { font-size: 1.3em; text-align: justify !important; }
+  .hero__role { white-space: nowrap; }
+  
+</style>
 </head>
 <body>
 
@@ -35,8 +130,9 @@
       </span>
     </a>
 
-    <nav class="site-nav" aria-label="Primary">
+      <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list">
+        <li><a href="#top">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
@@ -45,7 +141,7 @@
       </ul>
     </nav>
 
-    <span class="status-pill"><span class="status-pill__dot" aria-hidden="true"></span>Available for freelance work</span>
+    <!-- <span class="status-pill"><span class="status-pill__dot" aria-hidden="true"></span>Available for freelance work</span> -->
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteHeader">
       <span></span><span></span><span></span>
@@ -56,36 +152,42 @@
 <main id="main">
 
   <!-- ===================== HERO ===================== -->
-    <!-- ===================== HERO ===================== -->
   <section class="hero" id="top">
     <div class="wrap">
       <div class="hero__copy">
-        <p class="eyebrow hero__eyebrow">Karachi, Pakistan · Remote / Freelance</p>
-        <h1 class="hero__name">Affan Ahmed Khan</h1>
-        <p class="hero__role">AI Engineer building agentic AI systems, Email, WhatsApp & Business Automation</p>
-        <p class="hero__lede">I design AI agents that read your inboxes and  Shopify storefronts, then act on them with your Approval</p>
+        <!-- <p class="eyebrow hero__eyebrow">Karachi, Pakistan · Remote / Freelance</p> -->
+        <h1 class="hero__name">Build AI Chatbots that answer your customers </h1>
+        <p class="hero__role">Auto-replies for WhatsApp, email &amp; your Shopify store</p>
+        <p class="hero__lede">Your customer sends a message  the chatbot replies instantly, with the right answer, in your words. It runs on your Website, WhatsApp, email, and Shopify around the clock. You only step in when something genuinely needs you.</p>
+        <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
         <div class="hero__actions">
           <a class="btn btn--solid" href="#contact">Start a project</a>
           <a class="btn btn--ghost" href="#work">See the work</a>
         </div>
       </div>
 
+
+<!-- 
       <div class="hero__visual">
-        <div class="hero__row">
-          <div class="hero__photo-wrap">
-            <img class="hero-mesh" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan">
+
+        <div class="hero__photo-wrap">
+          <img class="hero-mesh" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan">
           </div>
-          <div id="chatbots-panel">
-            <p class="cb-heading">My Chatbots</p>
-            <a class="cb-btn" href="https://huggingface.co/spaces/AffanAIEngr/RAG" target="_blank" rel="noopener">
-              <span class="cb-dot"></span>
-              <span class="cb-btn__text">
-                <strong>Forge Physique AI</strong>
-                <span>Fitness Q&amp;A · Live demo</span>
-              </span>
-            </a>
-          </div>
-        </div>
+       
+
+         <a class="yt-btn" href="https://www.youtube.com/@Affan_Agentic_AI" target="_blank" rel="noopener"> -->
+          
+
+
+    </div>
+  </section>
+
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="wrap">
+            <div class="about__photo-col">
+        <img class="about__photo" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan">
         <a class="yt-btn" href="https://www.youtube.com/@Affan_Agentic_AI" target="_blank" rel="noopener">
           <svg class="yt-btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
@@ -94,35 +196,14 @@
           My YouTube Channel
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== SPEC STRIP ===================== -->
-  <div class="spec-strip">
-    <div class="wrap">
-      <div class="spec-strip__item">
-        <p class="spec-strip__value">NED University · BE + MS, AI (NLP &amp; CV)</p>
-        <p class="spec-strip__label">EDUCATION</p>
-      </div>
-      <div class="spec-strip__item">
-        <p class="spec-strip__value">LangGraph · Groq · RAG · Tool-calling</p>
-        <p class="spec-strip__label">AI STACK</p>
-      </div>
-      <div class="spec-strip__item">
-        <p class="spec-strip__value">ANSYS · SolidWorks · 3D Slicer</p>
-        <p class="spec-strip__label">SIMULATION STACK</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about" id="about">
-    <div class="wrap">
-      <h2>Agents that actually act</h2>
       <div class="about__body">
-        <p>I will automate <strong> your email. your WhatsApp, your Shopify customer's query reply</strong>  Your client follow-ups. Agentic AI that reads real data, calls real tools, and solves the repetitive problems eating your day — instead of just answering questions in a chat window.</p>
-        <p>Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p>
+        <h2 class="about__heading">Who I am?</h2>
+              <p class="about__intro">I hold a <strong>Master's in AI from NED University</strong>, and I specialize in one thing: AI chatbots and automation for WhatsApp, email, and Shopify. If your customers are messaging you at all hours, I build the agent that handles it for you.</p>
 
+             
+      <p class="about__intro">Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p>        
+      <!-- <p>Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p> -->
+      </div>
     </div>
   </section>
 
@@ -131,19 +212,19 @@
     <div class="wrap">
       <div class="section-head">
         <h2>What I build</h2>
-        <p class="eyebrow">Three areas of focus</p>
+        <p class="eyebrow">Two areas of focus</p>
       </div>
       <div class="sheets">
         <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
           <p class="sheet__no">SHEET 01 </p>
           <h3>Agentic AI &amp; Automation</h3>
-          <p>Tool-calling agents that read inboxes, chat platforms, and storefronts, then act — not chatbots that only answer FAQs. Built with LangGraph orchestration, LLM inference, and a human-review gate before anything ships to a customer.</p>
+          <p>Tool-calling agents that read inboxes, chat platforms, and storefronts, then act  not chatbots that only answer FAQs. Built with LangGraph orchestration, LLM inference, and a human-review gate before anything ships to a customer.</p>
         </article>
 
-        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#knee-oa').scrollIntoView({behavior:'smooth'})">
+        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#thesis-project').scrollIntoView({behavior:'smooth'})">
           <p class="sheet__no">SHEET 02 </p>
           <h3>CNN and Transformers for Disease Detection</h3>
-          <p>Classification and detection models for medical and biomechanical imaging — trained, validated, and documented for a clinical or research audience, not left as a notebook demo.</p>
+          <p>Classification and detection models for medical and biomechanical imaging  trained, validated, and documented for a clinical or research audience, not left as a notebook demo.</p>
         </article>
       </div>
     </div>
@@ -178,7 +259,7 @@
         <article class="project">
           <span class="project__index">02</span>
           <div>
-            <h3 class="project__name">Omnichannel Agent — WhatsApp + Email</h3>
+            <h3 class="project__name">Omnichannel Agent  WhatsApp + Email</h3>
             <p class="project__desc">Extends the email agent across WhatsApp, routing and replying across both channels from one orchestration layer.</p>
           </div>
           <div class="project__meta">
@@ -229,7 +310,7 @@
                 <article class="project" id="thesis-project">
           <span class="project__index">05</span>
           <div>
-            <h3 class="project__name">Knee OA Detection — MS Thesis</h3>
+            <h3 class="project__name">Knee OA Detection  MS Thesis</h3>
             <p class="project__desc">Combining finite element analysis with a deep-learning classifier to detect knee osteoarthritis, bridging structural simulation and computer vision.</p>
                         <a class="project__case-link" href="case-study-knee-oa.html">Read the case study &rarr;</a>
           </div>
@@ -257,23 +338,19 @@
         <div class="skill-group">
           <p class="skill-group__label">AI &amp; Agents</p>
           <div class="tag-list">
-            <span>Python</span><span>LangGraph</span><span>RAG</span><span>Groq API</span>
-            <span>Pydantic</span><span>SQLAlchemy</span><span>Streamlit</span><span>PyTorch</span>
-            <span>YOLO</span><span>Computer Vision</span><span>NLP</span>
+            <span>Python</span><span>LangGraph</span><span>RAG</span><span>Groq API</span><span>Computer Vision</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-group__label">Engineering &amp; Simulation</p>
           <div class="tag-list">
-            <span>SolidWorks</span><span>ANSYS</span><span>Finite Element Analysis</span>
-            <span>CAD Modeling</span><span>3D Slicer</span><span>DICOM / Medical Imaging</span>
+            <span>ANSYS</span><span>Finite Element Analysis</span><span>CAD Modeling</span><span>SolidWorks</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-group__label">Tooling &amp; Integration</p>
           <div class="tag-list">
-            <span>Git / GitHub</span><span>Gmail &amp; Calendar API</span><span>Twilio</span>
-            <span>Shopify API</span><span>OAuth2</span>
+            <span>Git / GitHub</span><span>Shopify API</span><span>OAuth2</span>
           </div>
         </div>
       </div>
@@ -285,9 +362,9 @@
     <div class="wrap">
       <div class="contact__intro">
         <h2>Let's build something that has to work.</h2>
-        <p>Open to freelance and contract work — agentic AI systems, biomechanical simulation, or both. If you can describe the problem, I can tell you honestly whether it's a good fit.</p>
+                <p>Open to freelance and contract work  RAG chatbots, agentic AI systems, and tool-calling automation agents. If you can describe the problem, I can tell you honestly whether it's a good fit.</p>
         <div class="contact__actions">
-          <a class="btn btn--solid" href="mailto:affanned399@gmail.com">Email me</a>
+          <a class="btn btn--solid" href="mailto:affan@affankhan.net">Email me</a>
 
 
                     <a class="btn btn--ghost" href="/Affan_Ahmed_Khan_Resume.pdf" target="_blank" rel="noopener">View CV</a>
@@ -328,7 +405,7 @@
         </div>
         <div class="title-block__cell">
           <dt>Contact</dt>
-          <dd>affanned399@gmail.com</dd>
+          <dd>affan@affankhan.net</dd>
         </div>
       </dl>
     </div>
@@ -344,9 +421,10 @@
 </footer>
 
 <script src="script.js"></script>
+
 <!-- ===================== CHAT WIDGET ===================== -->
 <style>
-#chat-bubble { position:fixed; right:16px; top:85%; transform:translateY(-50%); z-index:9999; }
+#chat-bubble { position:fixed; right:16px; top:69%; transform:translateY(-50%); z-index:9999; }
 #chat-toggle {
   height:54px; padding:0 20px; border-radius:30px; background:#0C2036; border:1px solid rgba(194,70,31,0.4);
   cursor:pointer; display:flex; align-items:center; gap:10px;
@@ -398,11 +476,13 @@ transform: translateY(-50%); width:320px;
 }
 #chat-send:hover { background:#a83b1a; }
 #chat-send:disabled { opacity:0.5; cursor:not-allowed; }
+</style>
+
 <!-- ====== RIGHT SOCIAL BAR ====== -->
 <style>
 #social-bar {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 18px;
   display: flex;
   flex-direction: column;
@@ -413,8 +493,8 @@ transform: translateY(-50%); width:320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 67px;
+  height: 67px;
   border-radius: 8px;
   background: rgba(12,32,54,0.9);
   border: 1px solid rgba(255,255,255,0.1);
@@ -429,16 +509,17 @@ transform: translateY(-50%); width:320px;
 #social-bar a.sb-li:hover     { box-shadow: 0 0 12px #0A66C2; border-color: #0A66C2; }
 #social-bar a.sb-ig:hover     { box-shadow: 0 0 12px #e1306c; border-color: #e1306c; }
 #social-bar a.sb-fb:hover     { box-shadow: 0 0 12px #1877F2; border-color: #1877F2; }
-#social-bar svg { width: 20px; height: 20px; display: block; }
+#social-bar svg { width: 37px; height: 57px; display: block; }
+#social-bar a.sb-fiverr svg { width: 55px; height: 45px; }
 @media (max-width: 760px) { #social-bar { display: none; } }
 </style>
 
 <div id="social-bar">
 
-  <a class="sb-fiverr" href="https://www.fiverr.com/affan_ahmed144" target="_blank" rel="noopener" title="Fiverr">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#1dbf73" d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-1.85c-.96 0-1.416.49-1.416 1.387v4.334h-2.003V9.937h-1.005c-.96 0-1.416.49-1.416 1.387v4.28H12.32V9.937h-1.961v5.667c0 1.304.848 1.98 1.903 1.98h2.057v.024c0 1.31-.85 1.96-1.91 1.96H10.39v1.66h2.02c1.957 0 3.571-1.038 3.571-3.37v-.274h1.893c1.042 0 1.9-.677 1.9-1.98V11.71h.996a.795.795 0 0 1 .82.813V15.6h1.418v-3.717zM9.646 6.26H7.55c-.948 0-1.408.49-1.408 1.387v.97H4.986v1.67h1.156v7.317h2.008V10.29h1.496V8.618H8.15V7.816c0-.32.158-.491.55-.491h.946V6.26z"/>
-    </svg>
+    <a class="sb-fiverr" href="https://www.fiverr.com/affan_ahmed144" target="_blank" rel="noopener" title="Fiverr">
+      <svg viewBox="0 8 24 8" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#1dbf73" d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z"/>
+      </svg>
   </a>
 
   <a class="sb-wa" href="https://wa.me/923242639275" target="_blank" rel="noopener" title="WhatsApp">
@@ -447,7 +528,7 @@ transform: translateY(-50%); width:320px;
     </svg>
   </a>
 
-  <a class="sb-email" href="mailto:affanned399@gmail.com" title="Email">
+  <a class="sb-email" href="mailto:affan@affankhan.net" title="Email">
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="2" y="4" width="20" height="16" rx="2" stroke="#C2461F" stroke-width="1.8"/>
       <path d="M2 8l10 6 10-6" stroke="#C2461F" stroke-width="1.8" stroke-linecap="round"/>
@@ -466,7 +547,7 @@ transform: translateY(-50%); width:320px;
     </svg>
   </a>
 
-  <a class="sb-ig" href="#" target="_blank" rel="noopener" title="Instagram">
+    <a class="sb-ig" href="https://www.instagram.com/affanned1999/" target="_blank" rel="noopener" title="Instagram">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="ig-g" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -481,14 +562,67 @@ transform: translateY(-50%); width:320px;
     </svg>
   </a>
 
-  <a class="sb-fb" href="#" target="_blank" rel="noopener" title="Facebook">
+  <a class="sb-fb" href="https://www.facebook.com/profile.php?id=61570605256635" target="_blank" rel="noopener" title="Facebook">
     <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
     </svg>
   </a>
 
 </div>
+
+
+
+<style>
+#chatbots-panel {
+  position: fixed;
+  right: 270px;
+  top: 102px;
+  z-index: 9998;
+  width: 270px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #0a1e35;
+  border: 1px solid rgba(34,211,238,0.3);
+  border-radius: 10px;
+  padding: 12px;
+}
+.cb-btn {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 8px !important;
+}
+.cb-btn__text strong { font-size: 22.8px; color: #4ADE80; }
+.cb-btn__text span { font-size: 13.8px; color: #4ADE80; }
+.cb-dot { display: none !important; }
+
 </style>
+
+<div id="chatbots-panel">
+  <p class="cb-heading">My Chatbots</p>
+  <a class="cb-btn" href="https://huggingface.co/spaces/AffanAIEngr/RAG" target="_blank" rel="noopener">
+    <span class="cb-dot"></span>
+    <span class="cb-btn__text">
+            <strong>Forge Physique AI</strong>
+      <span>Fitness Q&amp;A · Live demo</span>
+    </span>
+  </a>
+    <a class="cb-btn" href="https://chatshopify.streamlit.app/" target="_blank" rel="noopener">
+    <span class="cb-dot"></span>
+    <span class="cb-btn__text">
+      <strong>Shopify Store AI</strong>
+      <span>Customer FAQ · Live demo</span>
+    </span>
+  </a>
+  <a class="cb-btn" href="https://electrician.streamlit.app/" target="_blank" rel="noopener">
+    <span class="cb-dot"></span>
+    <span class="cb-btn__text">
+      <strong>Electrician AI</strong>
+      <span>Customer Q&amp;A · Live demo</span>
+    </span>
+  </a>
+</div>
 
 <div id="chat-bubble">
   <div id="chat-box">
@@ -519,7 +653,7 @@ transform: translateY(-50%); width:320px;
       <rect x="2.5" y="9.5" width="2.5" height="4" rx="1" fill="white"/>
       <rect x="19" y="9.5" width="2.5" height="4" rx="1" fill="white"/>
     </svg>
-    <span class="ct-label">Ask Affan AI</span>
+    <span class="ct-label">Talk with me </span>
   </button>
 </div>
 
@@ -562,7 +696,7 @@ transform: translateY(-50%); width:320px;
       addMsg(data.reply || data.error || 'Something went wrong.', 'bot');
     } catch(e) {
       typing.remove();
-      addMsg('Network error. Please email affanned399@gmail.com', 'bot');
+      addMsg('Network error. Please email affan@affankhan.net for assistance.', 'bot');
     }
     send.disabled = false;
     input.focus();
@@ -571,6 +705,11 @@ transform: translateY(-50%); width:320px;
   send.addEventListener('click', sendMsg);
   input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
 })();
+</script>
+<script>
+window.addEventListener('scroll', function(){
+  document.getElementById('chatbots-panel').style.display = window.scrollY > 80 ? 'none' : 'flex';
+});
 </script>
 </body>
 </html>
