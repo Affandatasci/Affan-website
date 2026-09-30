@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0XQG3HQ46S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0XQG3HQ46S');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Affan Ahmed Khan — AI Engineer</title>
@@ -75,9 +83,9 @@
      15px because it's never inside a .section-head. */
   .brand { font-size: 22.2px; white-space: nowrap; }
   .site-nav__list a { font-size: 19.99px; }
-  .brand small { font-size: 16.25px; display: inline !important; }
+  .brand small { font-size: 16.25px; display: block !important; }
     /* .brand small { font-size: 16.25px; display: inline !important; } */
-  .site-nav { margin-left: 1.5px; }
+  .site-nav { margin-left: 95px; }
   .status-pill { font-size: 13px; }
   .spec-strip__label { font-size: 12.5px; }
   .section-head .eyebrow { font-size: 13.5px; }
@@ -424,7 +432,7 @@
 
 <!-- ===================== CHAT WIDGET ===================== -->
 <style>
-#chat-bubble { position:fixed; right:389px; top:80%; transform:translateY(-50%); z-index:9999; }
+#chat-bubble { position:fixed; right:360px; top:65%; transform:translateY(-50%); z-index:9999; }
 #chat-toggle {
   height:54px; padding:0 20px; border-radius:30px; background:#0C2036; border:1px solid rgba(194,70,31,0.4);
   cursor:pointer; display:flex; align-items:center; gap:10px;
@@ -575,8 +583,8 @@ transform: translateY(-50%); width:320px;
 <style>
 #chatbots-panel {
   position: fixed;
-  right: 110px;
-  top: 102px;
+  right: 25px;
+  top: 72px;
   z-index: 9998;
   width: 270px;
   max-width: calc(100vw - 32px);
@@ -620,6 +628,13 @@ transform: translateY(-50%); width:320px;
     <span class="cb-btn__text">
       <strong>Electrician AI</strong>
       <span>Customer Q&amp;A · Live demo</span>
+    </span>
+  </a>
+    <a class="cb-btn" href="https://premierdrive-rag.streamlit.app/" target="_blank" rel="noopener">
+    <span class="cb-dot"></span>
+    <span class="cb-btn__text">
+      <strong>PremierDrive AI</strong>
+      <span>FAQ &amp; bookings · Live demo</span>
     </span>
   </a>
 </div>
@@ -708,7 +723,7 @@ transform: translateY(-50%); width:320px;
 </script>
 <script>
 window.addEventListener('scroll', function(){
-  document.getElementById('chatbots-panel').style.display = window.scrollY > 80 ? 'none' : 'flex';
+  document.getElementById('chatbots-panel').style.display = window.scrollY > 300 ? 'none' : 'flex';
 });
 </script>
 </body>

@@ -228,7 +228,7 @@ h1, h2, h3 {
   background: var(--blue-900);
   color: var(--blue-ink);
   overflow: hidden;
-  padding-block: 132px 84px;
+  padding-block: 132px 200px;
 }
 .hero::before {
   content: "";
