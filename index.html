@@ -118,7 +118,8 @@
 </style>
 </head>
 <body>
-
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
 <!-- <a class="skip-link" href="#main">Skip to content</a> -->
 
 <header class="site-header" id="siteHeader">
@@ -180,14 +181,27 @@
 
 
 
-          <a class="btn btn--solid" href="#contact" onclick="gtag('event','cta_click',{button:'start_project'})" style="font-size:1.5rem;">Get a Free Chatbot Demo</a>
+          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.5rem;">Shopify Store Automation Demo</a>
           <button onclick="document.getElementById('wa-modal').style.display='flex';gtag('event','cta_click',{button:'whatsapp_demo'})"
             style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.25rem;font-family:inherit;">
+            
+            
+
             ▶ Watch WhatsApp Automation Demo
           </button>
         </div>
       </div>
-
+<!-- Shopify demo video modal -->
+<div id="shopify-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}"
+  style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+  <div style="position:relative;max-width:860px;width:100%;">
+    <button onclick="document.getElementById('shopify-modal').style.display='none';this.closest('div').querySelector('video').pause()"
+      style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button>
+    <video controls autoplay style="width:100%;border-radius:10px;display:block;"
+      src="best_shopfy_agent.mp4">
+    </video>
+  </div>
+</div>
 <div id="wa-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}"
   style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;">
   <div style="position:relative;max-width:860px;width:100%;">
@@ -235,7 +249,7 @@
       </div>
       <div class="about__body">
         <h2 class="about__heading">Who I am?</h2>
-              <p class="about__intro">I hold a <strong>Master's in AI from NED University</strong>, and I specialize in one thing: AI chatbots and automation for WhatsApp, email, and Shopify. If your customers are messaging you at all hours, I build the agent that handles it for you.</p>
+              <p class="about__intro">I hold a <strong>Master's in AI from NED University</strong>, and I specialized in: AI chatbots and automation for WhatsApp, email, and Shopify. If your customers are messaging you at all hours, I build the agent that handles it for you.</p>
 
              
       <p class="about__intro">Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p>        
@@ -755,6 +769,33 @@ transform: translateY(-50%); width:320px;
 <script>
 window.addEventListener('scroll', function(){
   document.getElementById('chatbots-panel').style.display = window.scrollY > 300 ? 'none' : 'flex';
+});
+</script>
+<style>
+* { cursor: none !important; }
+#cursor-dot {
+  position: fixed; width: 8px; height: 8px; background: #00bfff;
+  border-radius: 50%; pointer-events: none; z-index: 99999;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+#cursor-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: 2px solid #00bfff; border-radius: 50%;
+  pointer-events: none; z-index: 99998;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 12px #00bfff;
+  transition: transform 0.12s ease, width 0.2s, height 0.2s;
+}
+</style>
+<script>
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+document.addEventListener('mousemove', e => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px';
+  ring.style.top = e.clientY + 'px';
 });
 </script>
 </body>
