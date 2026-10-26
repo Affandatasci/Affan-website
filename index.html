@@ -13,7 +13,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Affan Ahmed Khan — AI Engineer</title>
 <meta name="description" content="Affan Ahmed Khan — AI engineer. Agentic AI systems, & RAG, built with production-grade rigor.">
-
+<meta property="og:type" content="website">
+<meta property="og:title" content="Affan Ahmed Khan — AI Engineer">
+<meta property="og:description" content="AI chatbots for WhatsApp, email and Shopify.">
+<meta property="og:url" content="https://affankhan.net">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://affankhan.net/blank.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -113,7 +118,11 @@
   /* .site-nav { margin-left:299px; } */
   .hero__copy { text-align: left; }
   .hero__lede { font-size: 1.3em; text-align: justify !important; }
-  .hero__role { white-space: nowrap; }
+  .hero__role { white-space: normal; text-wrap: balance; }
+  .hero__name { width: 700px; max-width: 100%; }
+  .hero__role, .hero__lede { width: 700px; max-width: 100%; }
+  .hero__role { max-width: 980px; }
+  @media (min-width: 981px) { .hero__name, .hero__role { text-align: justify; text-align-last: justify; } }
   
 </style>
 </head>
@@ -165,11 +174,12 @@
     <div class="wrap">
       <div class="hero__copy">
         <!-- <p class="eyebrow hero__eyebrow">Karachi, Pakistan · Remote / Freelance</p> -->
-        <h1 class="hero__name" style="font-size:clamp(1.138rem,5.5vw,4.73rem) !important; margin-bottom:18px;">Build AI Chatbots that answer your customers </h1>
-        <p class="hero__role" style="font-size:clamp(1.69rem,4.38vw,2.21rem) !important;">Clients see 40% faster response times</p>
-        <p class="hero__lede" style="font-size:1.63rem !important;">Your customer sends a message  the chatbot replies instantly, with the right answer. It runs on your Website, WhatsApp, email, and Shopify store around the clock.</p>
+        <h1 class="hero__name" style="font-size:clamp(1.138rem,5.5vw,4.73rem) !important; margin-bottom:18px;">AI answers customers<br>and book their orders
+ </h1>
+        <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">AI chatbot + automation for WhatsApp, your website, email and your Shopify store, working day and night </p>
+        <p class="hero__lede" style="font-size:1.63rem !important;">A customer messages you at 11pm. Your assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet. When a real person is needed, it passes the chat to you</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
-        <div class="hero__actions" style="margin-top:14v0px;">
+        <div class="hero__actions" style="margin-top:140px;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
           <a class="btn" href="https://www.youtube.com/watch?v=9uEfH8zFgsc&feature=youtu.be"
@@ -181,8 +191,8 @@
 
 
 
-          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.5rem;">Shopify Store Automation Demo</a>
-          <button onclick="document.getElementById('wa-modal').style.display='flex';gtag('event','cta_click',{button:'whatsapp_demo'})"
+          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';document.querySelector('#shopify-modal video').play();gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.5rem;">Shopify Store Automation Demo</a>
+          <button onclick="document.getElementById('wa-modal').style.display='flex';document.querySelector('#wa-modal video').play();gtag('event','cta_click',{button:'whatsapp_demo'})"
             style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.25rem;font-family:inherit;">
             
             
@@ -798,5 +808,30 @@ document.addEventListener('mousemove', e => {
   ring.style.top = e.clientY + 'px';
 });
 </script>
+<style>
+#cursor-ring.hover {
+  width: 64px; height: 64px;
+  background: rgba(0,191,255,0.15);
+  box-shadow: 0 0 25px #00bfff, 0 0 50px #00bfff;
+}
+#cursor-dot.hover { transform: translate(-50%,-50%) scale(1.8); }
+a:hover, button:hover, .cb-btn:hover, .btn:hover, #chat-bubble:hover {
+  box-shadow: 0 0 18px #00bfff, 0 0 40px rgba(0,191,255,0.6) !important;
+  transition: box-shadow 0.25s ease;
+}
+</style>
+<script>
+document.addEventListener('mouseover', e => {
+  const on = e.target.closest('a, button, .cb-btn, .btn, #chat-bubble');
+  document.getElementById('cursor-ring').classList.toggle('hover', !!on);
+  document.getElementById('cursor-dot').classList.toggle('hover', !!on);
+});
+</script>
+<style>
+@media (hover: none), (max-width: 760px) {
+  #cursor-dot, #cursor-ring { display: none !important; }
+  * { cursor: auto !important; }
+}
+</style>
 </body>
 </html>
