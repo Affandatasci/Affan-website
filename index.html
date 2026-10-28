@@ -56,7 +56,7 @@
   .about__photo-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .yt-btn { font-size: 30.5px !important; padding: 19.4px 34.8px !important; }
   .yt-btn__icon { width: 32.4px !important; height: 32.4px !important; }
-  .cb-btn { padding: 8px 14px !important; }
+  .cb-btn { padding: 11px 8px !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; }  
   .about__body p { text-align: justify !important; }
   .sheet p { text-align: justify !important; }
   .yt-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; color: #0C2036 !important; background: #ffffff !important; border: 1px solid rgba(12,32,54,0.25) !important; border-radius: 6px !important; text-decoration: none !important; padding: 14.4px 28.8px !important; font-size: 22.5px !important; }
@@ -179,7 +179,7 @@
         <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">AI chatbot + automation for WhatsApp, your website, email and your Shopify store, working day and night </p>
         <p class="hero__lede" style="font-size:1.63rem !important;">A customer messages you at 11pm. Your assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet. When a real person is needed, it passes the chat to you</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
-        <div class="hero__actions" style="margin-top:140px;">
+        <div class="hero__actions" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:700px;max-width:100%;position:relative;top:-3mm;margin-top:40px;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
           <a class="btn" href="https://www.youtube.com/watch?v=9uEfH8zFgsc&feature=youtu.be"
@@ -191,13 +191,13 @@
 
 
 
-          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';document.querySelector('#shopify-modal video').play();gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.5rem;">Shopify Store Automation Demo</a>
+          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';document.querySelector('#shopify-modal video').play();gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.2rem;justify-content:center;text-align:center;">WatchShopify Automation</a>
           <button onclick="document.getElementById('wa-modal').style.display='flex';document.querySelector('#wa-modal video').play();gtag('event','cta_click',{button:'whatsapp_demo'})"
-            style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.25rem;font-family:inherit;">
+            style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.2rem;font-family:inherit;justify-content:center;text-align:center;">
             
             
 
-            ▶ Watch WhatsApp Automation Demo
+            ▶ Watch WhatsApp Automation
           </button>
         </div>
       </div>
@@ -637,9 +637,9 @@ transform: translateY(-50%); width:320px;
 #chatbots-panel {
   position: fixed;
   right: 25px;
-  top: 72px;
+  top: 139px;
   z-index: 9998;
-  width: 270px;
+  width: 190px;
   max-width: calc(100vw - 32px);
   display: flex;
   flex-direction: column;
@@ -654,14 +654,14 @@ transform: translateY(-50%); width:320px;
   border: 1px solid rgba(255,255,255,0.12) !important;
   border-radius: 8px !important;
 }
-.cb-btn__text strong { font-size: 22.8px; color: #4ADE80; }
-.cb-btn__text span { font-size: 13.8px; color: #4ADE80; }
+.cb-btn__text strong { font-size: 16.25px; color: #4ADE80; white-space: nowrap; }
+.cb-btn__text span { display: none; }
 .cb-dot { display: none !important; }
 
 </style>
 
 <div id="chatbots-panel">
-  <p class="cb-heading">Live AI Demo</p>
+  <p class="cb-heading">Live Chats</p>
   <a class="cb-btn" href="https://component.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>CNC AI</strong><span>CNC Prodction · Live demo</span></span></a>
   <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
     <span class="cb-dot"></span>
