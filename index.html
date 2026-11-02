@@ -47,7 +47,8 @@
      at desktop widths; it scales down proportionally on narrower
      screens same as before, and mobile still uses its own 260px
      stacked layout below 760px. */
-  .hero .wrap { grid-template-columns: 1fr; margin-left: 80px; }
+   @media (min-width: 761px) { .hero .wrap { grid-template-columns: 1fr; margin-left: 80px; } }
+   @media (max-width: 760px) { .hero .wrap { grid-template-columns: 1fr; margin-left: 0; } }
   .hero__visual { order: 0; }
   .hero__photo-wrap { aspect-ratio: 4 / 3; max-width: 480px; flex: 0 0 auto; }
   .about__photo { width: 100%; max-width: 420px; border-radius: 8px; }
@@ -114,7 +115,8 @@
     background: rgba(22, 101, 52, 0.10);
     border-color: rgba(22, 101, 52, 0.35);
   }
-    .site-header .wrap { justify-content: flex-start; gap: 20px; margin-left: 80px; }
+    @media (min-width: 761px) { .site-header .wrap { justify-content: flex-start; gap: 20px; margin-left: 80px; } }
+    @media (max-width: 760px) { .site-header .wrap { justify-content: flex-start; gap: 20px; margin-left: 0; } }
   /* .site-nav { margin-left:299px; } */
   .hero__copy { text-align: left; }
   .hero__lede { font-size: 1.3em; text-align: justify !important; }
@@ -122,7 +124,8 @@
   .hero__name { width: 700px; max-width: 100%; }
   .hero__role, .hero__lede { width: 700px; max-width: 100%; }
   .hero__role { max-width: 980px; }
-
+  @media (min-width: 981px) { .hero__name, .hero__role { text-align: justify; text-align-last: justify; } }
+  
 </style>
 </head>
 <body>
@@ -176,9 +179,9 @@
         <h1 class="hero__name" style="font-size:clamp(1.138rem,4vw,3.1rem)!important; margin-bottom:18px; line-height:1.55;">AI Bot Answers Customer Queries, and Books Orders on WhatsApp 24/7
  </h1>
         <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">One AI that instantly answers WhatsApp, your website, email and your Shopify store — day and night </p>
-        <p class="hero__lede" style="font-size:1.63rem !important;">A customer messages you at 11pm. Your AI assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet.</p>
+        <p class="hero__lede" style="font-size:1.1rem !important; margin-top:6px;">A customer messages you at 11pm. Your AI assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet.</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
-        <div class="hero__actions" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;width:700px;max-width:100%;position:relative;top:-3mm;margin-top:40px;">
+        <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:140px;position:fixed;top:109px;right:235px;z-index:50;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
           <a class="btn" href="https://www.youtube.com/watch?v=9uEfH8zFgsc&feature=youtu.be"
