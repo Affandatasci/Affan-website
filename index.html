@@ -181,7 +181,7 @@
         <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">One AI that instantly answers WhatsApp, your website, email and your Shopify store — day and night </p>
         <p class="hero__lede" style="font-size:1.1rem !important; margin-top:6px;">A customer messages you at 11pm. Your AI assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet.</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
-        <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:140px;position:fixed;top:109px;right:235px;z-index:50;">
+        <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:164px;position:fixed;top:147px;right:38px;margin-top:0;z-index:50;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
           <a class="btn" href="https://www.youtube.com/watch?v=9uEfH8zFgsc&feature=youtu.be"
@@ -193,13 +193,13 @@
 
 
 
-          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';document.querySelector('#shopify-modal video').play();gtag('event','cta_click',{button:'start_project'});return false;" style="font-size:1.2rem;justify-content:center;text-align:center;">Watch Shopify Automation</a>
+          <a class="btn btn--solid" href="#" onclick="document.getElementById('shopify-modal').style.display='flex';document.querySelector('#shopify-modal video').play();gtag('event','cta_click',{button:'start_project'});return false;"style="font-size:1.2rem;justify-content:center;text-align:center;width:380px;box-sizing:border-box;">▶ Shopify</a>
           <button onclick="document.getElementById('wa-modal').style.display='flex';document.querySelector('#wa-modal video').play();gtag('event','cta_click',{button:'whatsapp_demo'})"
-            style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.2rem;font-family:inherit;justify-content:center;text-align:center;">
+            style="background:#22c55e;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.2rem;font-family:inherit;justify-content:center;text-align:center;width:380px;box-sizing:border-box;">
             
             
 
-            ▶ Watch WhatsApp Automation
+            ▶ WhatsApp
           </button>
         </div>
       </div>
@@ -639,7 +639,7 @@ transform: translateY(-50%); width:320px;
 #chatbots-panel {
   position: fixed;
   right: 25px;
-  top: 139px;
+  top: 291px;
   z-index: 9998;
   width: 190px;
   max-width: calc(100vw - 32px);
@@ -659,20 +659,35 @@ transform: translateY(-50%); width:320px;
 .cb-btn__text strong { font-size: 16.25px; color: #4ADE80; white-space: nowrap; }
 .cb-btn__text span { display: none; }
 .cb-dot { display: none !important; }
+.hero__actions > * {
+  width: 164px !important;
+  height: 52px !important;
+  padding: 0 12px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+}
+.cb-btn__text strong { font-size: 1.2rem; font-weight: 700; }
 
 </style>
 
 <div id="chatbots-panel">
   <p class="cb-heading">Live Chats</p>
   <a class="cb-btn" href="https://component.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>CNC AI</strong><span>CNC Prodction · Live demo</span></span></a>
-  <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
+  <!--<a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
     <span class="cb-dot"></span>
     <span class="cb-btn__text">
             <strong>GymDesk AI</strong>
       <span>Fitness Q&amp;A · Live demo</span>
     </span>
   </a>
-    <a class="cb-btn" href="https://chatshopify.streamlit.app/" target="_blank" rel="noopener">
+    <!--<a class="cb-btn" href="https://chatshopify.streamlit.app/" target="_blank" rel="noopener">
     <span class="cb-dot"></span>
     <span class="cb-btn__text">
       <strong>Shopify Store AI</strong>
@@ -692,7 +707,7 @@ transform: translateY(-50%); width:320px;
       <strong> DrivingDesk AI</strong>
       <span>FAQ &amp; bookings · Live demo</span>
     </span>
-  </a>
+  </a>-->
 
 </div>
 
