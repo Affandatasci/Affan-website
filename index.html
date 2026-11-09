@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Affan Ahmed  — AI Engineer</title>
-<meta name="description" content="Affan Ahmed  — AI engineer. Agentic AI systems, & RAG, built with production-grade rigor.">
+<title>Affan Ahmed Khan Khan  — AI Engineer</title>
+<meta name="description" content="Affan Ahmed Khan  — AI engineer. Agentic AI systems, & RAG, built with production-grade rigor.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Affan Ahmed  — AI Engineer">
+<meta property="og:title" content="Affan Ahmed Khan  — AI Engineer">
 <meta property="og:description" content="AI chatbots for WhatsApp, email and Shopify.">
 <meta property="og:url" content="https://affankhan.net">
 <meta name="twitter:card" content="summary">
@@ -102,7 +102,7 @@
   .sheet h3 { font-size: 1.3em !important; }
   .project__status { font-size: 12px; }
   .project__tags span { font-size: 12px; }
-  .skill-group__label { font-size: 13px; }
+  .skill-group__label { font-size: 13px; } .skill-groups > .skill-group:nth-child(2) { display: none; }
   .tag-list span { font-size: 14px; padding: 7px 11px; }
   .title-block__cell dt { font-size: 11px; }
   .title-block__cell dd { font-size: 14px; }
@@ -125,7 +125,7 @@
   .hero__name { width: 700px; max-width: 100%; }
   .hero__role, .hero__lede { width: 700px; max-width: 100%; }
   .hero__role { max-width: 980px; }
-  @media (min-width: 981px) { .hero__name, .hero__role { text-align: justify; text-align-last: justify; } }
+  @media (min-width: 981px) { .hero__name, .hero__role { text-align: left; text-align-last: auto; } } @media (max-width: 760px) { .hero__lede, .about__body p, .sheet p { text-align: left !important; } }
   
 </style>
 </head>
@@ -146,7 +146,7 @@
         <circle cx="15" cy="15" r="2" fill="currentColor" stroke="none"/>
       </svg>
       <span>
-        Affan Ahmed
+        Affan Ahmed Khan
         <small>AI Engineer, Experienced Fiverr Seller </small>
       </span>
     </a>
@@ -177,10 +177,10 @@
     <div class="wrap">
       <div class="hero__copy">
         <!-- <p class="eyebrow hero__eyebrow">Karachi, Pakistan · Remote / Freelance</p> -->
-        <h1 class="hero__name" style="font-size:clamp(1.138rem,4vw,3.1rem)!important; margin-bottom:18px; line-height:1.55;">AI Bot Answers Customer Queries, and Books Orders on WhatsApp 24/7
+        <style>@media (min-width: 1110px) { .hero__copy { --rw: calc(24.34 * clamp(1.2rem, 2vw, 1.55rem)); } .hero__role { --rfs: 2vw; text-align-last: justify; } .hero__role, .hero__lede { text-align: justify !important; width: var(--rw); } }</style><h1 class="hero__name" style="font-size:clamp(1.138rem,4vw,3.1rem)!important; margin-bottom:18px; line-height:1.55;">AI Bot Answers Customer Calls and WhatsApp Chats, Books Slots and Orders 24/7
  </h1>
-        <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">One AI that instantly answers WhatsApp, your website, email and your Shopify store — day and night </p>
-        <p class="hero__lede" style="font-size:1.1rem !important; margin-top:6px;">A customer messages you at 11pm. Your AI assistant answers straight away from your own prices and details, books the slot or takes the order, and saves it in your sheet.</p>
+        <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">One AI that instantly answers your calls, WhatsApp, website, email and Shopify store, day and night </p>
+        <p class="hero__lede" style="font-size:1.1rem !important; margin-top:6px;">A customer calls or messages you at 11pm. Your AI assistant answers straight away from your own prices and details, checks your free slots, books the appointment or takes the order, and saves it in your sheet.</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
         <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:190px;position:fixed;top:126px;right:25px;margin-top:0;z-index:50;background:#0a1e35;border:1px solid rgba(34,211,238,0.3);border-radius:10px;padding:12px;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
@@ -210,7 +210,7 @@
   <div style="position:relative;max-width:860px;width:100%;">
     <button onclick="document.getElementById('shopify-modal').style.display='none';this.closest('div').querySelector('video').pause()"
       style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button>
-    <video controls autoplay style="width:100%;border-radius:10px;display:block;"
+    <video controls style="width:100%;border-radius:10px;display:block;"
       src="best_shopy_agent.mp4">
     </video>
   </div>
@@ -220,7 +220,7 @@
   <div style="position:relative;max-width:860px;width:100%;">
     <button onclick="document.getElementById('wa-modal').style.display='none';this.closest('div').querySelector('video').pause()"
       style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button>
-    <video controls autoplay style="width:100%;border-radius:10px;display:block;"
+    <video controls style="width:100%;border-radius:10px;display:block;"
       src="https://raw.githubusercontent.com/Affandatasci/affan-website/main/whatsapp-demo.mp4">
     </video>
   </div>
@@ -235,7 +235,7 @@
       <div class="hero__visual">
 
         <div class="hero__photo-wrap">
-          <img class="hero-mesh" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan">
+          <img class="hero-mesh" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan Khan">
           </div>
        
 
@@ -251,7 +251,7 @@
   <section class="about" id="about">
     <div class="wrap">
             <div class="about__photo-col">
-        <img class="about__photo" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan">
+        <img class="about__photo" src="affan_profile_picture.jpeg" alt="Affan Ahmed Khan Khan">
         <a class="yt-btn" href="https://www.youtube.com/@Affan_Agentic_AI" target="_blank" rel="noopener">
           <svg class="yt-btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
@@ -261,11 +261,11 @@
         </a>
       </div>
       <div class="about__body">
-        <h2 class="about__heading">Who I am?</h2>
+        <h2 class="about__heading">Who I Am</h2>
               <p class="about__intro">I hold a <strong>Master's in AI from NED University</strong>, and I specialized in: AI chatbots and automation for WhatsApp, email, and Shopify. If your customers are messaging you at all hours, I build the agent that handles it for you.</p>
 
              
-      <p class="about__intro">Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p>        
+      <p class="about__intro">Every bot I build gets human oversight, cost controls, and is tested before it touches your customers. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p>        
       <!-- <p>Every agent I build ships with human-approval gates, typed schemas, cost tracking, and full error handling. Automation that occasionally breaks is worse than no automation. I build for reliability, not demos.</p> -->
       </div>
     </div>
@@ -280,15 +280,15 @@
       </div>
       <div class="sheets">
         <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
-          <p class="sheet__no">SHEET 01 </p>
-          <h3>Agentic AI &amp; Automation</h3>
-          <p>Tool-calling agents that read inboxes, chat platforms, and storefronts, then act  not chatbots that only answer FAQs. Built with LangGraph orchestration, LLM inference, and a human-review gate before anything ships to a customer.</p>
+          <p class="sheet__no">SERVICE 01 </p>
+          <h3>WhatsApp &amp; Website Chatbots</h3>
+          <p>Answers your customers straight away, day and night, using your own prices and details. It books the slot or takes the order, and saves it for you.</p>
         </article>
 
-        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#thesis-project').scrollIntoView({behavior:'smooth'})">
+        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
           <p class="sheet__no">SHEET 02 </p>
-          <h3>Disease Detection via Transformers</h3>
-          <p>Classification and detection models for medical and biomechanical imaging  trained, validated, and documented for a clinical or research audience, not left as a notebook demo.</p>
+          <h3>Email &amp; Shopify Automation</h3>
+          <p>Replies to customer emails and looks up orders and products in your Shopify store. Anything unclear is held for you to approve before it reaches a customer.</p>
         </article>
       </div>
     </div>
@@ -315,7 +315,7 @@
           <div class="project__meta">
             <span class="project__status project__status--live">Built &amp; tested</span>
             <div class="project__tags">
-              <span>LangGraph</span><span>Groq</span><span>Gmail API</span><span>SQLAlchemy</span><span>Streamlit</span>
+              <span>Email Auto-Reply</span><span>Human Approval</span><span>Review Dashboard</span>
             </div>
           </div>
         </article>
@@ -327,9 +327,9 @@
             <p class="project__desc">Extends the email agent across WhatsApp, routing and replying across both channels from one orchestration layer.</p>
           </div>
           <div class="project__meta">
-            <span class="project__status">In development</span>
+            <!-- <span class="project__status">In development</span> -->
             <div class="project__tags">
-              <span>LangGraph</span><span>Twilio</span><span>Groq</span>
+              <span>WhatsApp</span><span>Email</span><span>Auto-Reply</span>
             </div>
           </div>
         </article>
@@ -347,7 +347,7 @@
           <div class="project__meta">
             <span class="project__status project__status--live">Built &amp; tested</span>
             <div class="project__tags">
-              <span>LangGraph</span><span>Shopify API</span>
+              <span>Order Tracking</span><span>Product Lookup</span><span>Shopify Support</span>
             </div>
           </div>
         </article>
@@ -362,7 +362,7 @@
           <div class="project__meta">
             <span class="project__status project__status--live">Built &amp; tested</span>
             <div class="project__tags">
-              <span>LangGraph</span><span>Groq</span><span>Qdrant</span><span>RAG</span>
+              <span>Website Chatbot</span><span>Answers From Your Documents</span>
             </div>
           </div>
         </article>
@@ -426,7 +426,7 @@
     <div class="wrap">
       <div class="contact__intro">
         <h2>Let's build something that has to work.</h2>
-                <p>Open to freelance and contract work  RAG chatbots, agentic AI systems, and tool-calling automation agents. If you can describe the problem, I can tell you honestly whether it's a good fit.</p>
+                <p>Open to freelance work. I build AI chatbots for WhatsApp, email, and Shopify that answer your customers 24/7. If you can describe the problem, I can tell you honestly whether it's a good fit.</p>
         <div class="contact__actions">
           <a class="btn btn--solid" href="mailto:affan@affankhan.net">Email me</a>
 
@@ -457,7 +457,7 @@
       <dl class="title-block">
         <div class="title-block__cell">
           <dt>Name</dt>
-          <dd>Affan Ahmed</dd>
+          <dd>Affan Ahmed Khan</dd>
         </div>
         <div class="title-block__cell">
           <dt>Based</dt>
@@ -479,8 +479,8 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; <span id="year">2026</span> Affan Ahmed</p>
-    <p>Built with an agentic AI stack, by hand.</p>
+    <p>&copy; <span id="year">2026</span> Affan Ahmed Khan</p>
+    <p>AI chatbots for WhatsApp, email and Shopify.</p>
   </div>
 </footer>
 
@@ -575,10 +575,10 @@ transform: translateY(-50%); width:320px;
 #social-bar a.sb-fb:hover     { box-shadow: 0 0 12px #1877F2; border-color: #1877F2; }
 #social-bar svg { width: 37px; height: 57px; display: block; }
 #social-bar a.sb-fiverr svg { width: 55px; height: 45px; }
-@media (max-width: 760px) { #social-bar { display: none; } }
+#social-bar { display: none; }
 </style>
 
-<div id="social-bar">
+<style>#social-bar { position: static; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 16px 22px; }</style><script>document.addEventListener('DOMContentLoaded', function () { var f = document.querySelector('.site-footer'), b = document.getElementById('social-bar'); if (f && b) f.insertBefore(b, f.firstChild); });</script><div id="social-bar">
 
     <a class="sb-fiverr" href="https://www.fiverr.com/affan_ahmed144" target="_blank" rel="noopener" title="Fiverr">
       <svg viewBox="0 8 24 8" xmlns="http://www.w3.org/2000/svg">
@@ -640,7 +640,7 @@ transform: translateY(-50%); width:320px;
 #chatbots-panel {
   position: fixed;
   right: 25px;
-  top: 334px;;
+  top: 313px;;
   z-index: 9998;
   width: 190px;
   max-width: calc(100vw - 32px);
@@ -662,7 +662,7 @@ transform: translateY(-50%); width:320px;
 .cb-dot { display: none !important; }
 .hero__actions > a, .hero__actions > button {
   width: 164px !important;
-  height: 52px !important;
+  height: 41.6px !important;
   padding: 0 12px !important;
   box-sizing: border-box !important;
   display: inline-flex !important;
@@ -678,10 +678,10 @@ transform: translateY(-50%); width:320px;
 
 </style>
 
-<div id="chatbots-panel">
+<style>@media (max-width: 900px) { .site-header.nav-open .site-nav__list a.is-active { color: var(--ink); } .hero__copy { min-width: 0; } .hero__role { max-width: 100%; } .hero__actions, #chatbots-panel { position: static !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 10px !important; width: auto !important; max-width: 460px !important; margin-top: 16px !important; } .hero__actions .cb-heading, #chatbots-panel .cb-heading { flex: 0 0 100%; margin: 0 0 2px; } .hero__actions > a, .hero__actions > button { flex: 1 1 140px; width: auto !important; } #chatbots-panel > a { flex: 1 1 140px; } } @media (max-width: 760px) { .site-header .wrap { gap: 10px; } .brand { font-size: 17px; min-width: 0; } .brand small { font-size: 11.5px; white-space: normal; line-height: 1.3; } .site-nav { margin-left: 0; } .nav-toggle { margin-left: auto; flex: none; } .services .eyebrow, .work .eyebrow { font-size: 15px !important; white-space: normal; } .yt-btn { max-width: 100%; white-space: normal; } }</style><script>document.addEventListener('DOMContentLoaded', function () { var q = window.matchMedia('(max-width: 900px)'); function move() { var a = document.querySelector('.hero__actions'), p = document.getElementById('chatbots-panel'); if (q.matches && a && p && a.nextElementSibling !== p) a.insertAdjacentElement('afterend', p); } move(); if (q.addEventListener) q.addEventListener('change', move); });</script><div id="chatbots-panel">
   <p class="cb-heading">Live Chats</p>
   <a class="cb-btn" href="https://huggingface.co/spaces/AffanAIEngr/RAG" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Business AI</strong><span>CNC Prodction · Live demo</span></span></a>
-  <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Gym FAQ AI</strong></span></a><a href="https://wa.me/923373978362" target="_blank" rel="noopener" title="Talk to WhatsApp Bot" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 6px;background:#25D366;border-radius:8px;text-decoration:none;text-align:center;box-shadow:0 0 14px rgba(37,211,102,0.35);transition:filter 0.2s;"><strong style="display:flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:1.2rem;font-weight:700;line-height:1.15;color:#04210f;white-space:nowrap;"><svg viewBox="0 0 24 24" width="20" height="20" style="flex:none;" aria-hidden="true"><path fill="#04210f" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp AI</strong><small style="font-family:var(--font-body);font-size:13px;font-weight:600;line-height:1.2;color:#0a3d20;white-space:nowrap;">+92 337 3978362</small></a><!--<a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
+  <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Gym FAQ AI</strong></span></a><a href="https://wa.me/923373978362" target="_blank" rel="noopener" title="Talk to WhatsApp Bot" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3.25px 6px;background:#25D366;border-radius:8px;text-decoration:none;text-align:center;box-shadow:0 0 14px rgba(37,211,102,0.35);transition:filter 0.2s;"><strong style="display:flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:1.2rem;font-weight:700;line-height:1.15;color:#04210f;white-space:nowrap;"><svg viewBox="0 0 24 24" width="20" height="20" style="flex:none;" aria-hidden="true"><path fill="#04210f" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp AI</strong><small style="font-family:var(--font-body);font-size:13px;font-weight:600;line-height:1.2;color:#0a3d20;white-space:nowrap;">Bot: +92 337 3978362</small></a><!--<a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
     <span class="cb-dot"></span>
     <span class="cb-btn__text">
             <strong>GymDesk AI</strong>
@@ -800,7 +800,7 @@ window.addEventListener('scroll', function(){
 });
 </script>
 <style>
-* { cursor: none !important; }
+#cursor-dot, #cursor-ring { display: none !important; }
 #cursor-dot {
   position: fixed; width: 8px; height: 8px; background: #00bfff;
   border-radius: 50%; pointer-events: none; z-index: 99999;
@@ -834,7 +834,7 @@ document.addEventListener('mousemove', e => {
 }
 #cursor-dot.hover { transform: translate(-50%,-50%) scale(1.8); }
 a:hover, button:hover, .cb-btn:hover, .btn:hover, #chat-bubble:hover {
-  box-shadow: 0 0 18px #00bfff, 0 0 40px rgba(0,191,255,0.6) !important;
+  box-shadow: none;
   transition: box-shadow 0.25s ease;
 }
 </style>
@@ -851,5 +851,5 @@ document.addEventListener('mouseover', e => {
   * { cursor: auto !important; }
 }
 </style>
-</body>
+<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:0;top:18px;display:flex;flex-direction:column;gap:6px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:67px;height:67px;border-radius:8px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:37px;height:57px;display:block}#left-links a.sb-fiverr svg{width:55px;height:45px}}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script></body>
 </html>
