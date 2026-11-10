@@ -57,7 +57,7 @@
   .about__photo-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .yt-btn { font-size: 30.5px !important; padding: 19.4px 34.8px !important; }
   .yt-btn__icon { width: 32.4px !important; height: 32.4px !important; }
-  .cb-btn { padding: 11px 8px !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; }  
+  .cb-btn { height: 39.2px !important; box-sizing: border-box !important; padding: 0 8px !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; }  
   .about__body p { text-align: justify !important; }
   .sheet p { text-align: justify !important; }
   .yt-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; color: #0C2036 !important; background: #ffffff !important; border: 1px solid rgba(12,32,54,0.25) !important; border-radius: 6px !important; text-decoration: none !important; padding: 14.4px 28.8px !important; font-size: 22.5px !important; }
@@ -79,7 +79,7 @@
   .yt-btn__icon { width: 18px; height: 18px; }
 
     /* "My Chatbots" heading, bumped to 1.4x its old 12.5px. */
-    .cb-heading { font-size: 22.5px; color: #22D3EE; letter-spacing: 0.06em; }
+    .cb-heading { font-size: 15.75px; color: #22D3EE; letter-spacing: 0.06em; }
     .hero__name { text-wrap: balance; }
 
   /* .hero__row { gap: 70px; } */
@@ -88,7 +88,7 @@
      under 13px. .hero__eyebrow is untouched — it keeps its own
      15px because it's never inside a .section-head. */
   .brand { font-size: 22.2px; white-space: nowrap; }
-  .site-nav__list a { font-size: 19.99px; }
+  .site-nav__list a { font-size: 14.99px; } @media (min-width: 901px) { .site-header .wrap { align-items: last baseline !important; } }
   .brand small { font-size: 16.25px; display: block !important; }
     /* .brand small { font-size: 16.25px; display: inline !important; } */
   .site-nav { margin-left: 95px; }
@@ -122,7 +122,7 @@
   .hero__copy { text-align: left; }
   .hero__lede { font-size: 1.3em; text-align: justify !important; }
   .hero__role { white-space: normal; text-wrap: balance; }
-  .hero__name { width: 700px; max-width: 100%; }
+  .hero__name { width: 700px; max-width: 100%; } @media (min-width: 901px) { .hero__name { margin-top: -36px; } }
   .hero__role, .hero__lede { width: 700px; max-width: 100%; }
   .hero__role { max-width: 980px; }
   @media (min-width: 981px) { .hero__name, .hero__role { text-align: left; text-align-last: auto; } } @media (max-width: 760px) { .hero__lede, .about__body p, .sheet p { text-align: left !important; } }
@@ -182,7 +182,7 @@
         <p class="hero__role" style="font-size:clamp(1.2rem,2.2vw,1.55rem)  !important;">One AI that instantly answers your calls, WhatsApp, website, email and Shopify store, day and night </p>
         <p class="hero__lede" style="font-size:1.1rem !important; margin-top:6px;">A customer calls or messages you at 11pm. Your AI assistant answers straight away from your own prices and details, checks your free slots, books the appointment or takes the order, and saves it in your sheet.</p>
         <!-- <p class="hero__lede">Built with LangGraph and RAG: tool-calling agents that classify, draft, and act on real data — holding anything uncertain for a human to approve before it ever reaches a customer.</p> -->
-        <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:190px;position:fixed;top:126px;right:25px;margin-top:0;z-index:50;background:#0a1e35;border:1px solid rgba(34,211,238,0.3);border-radius:10px;padding:12px;">
+        <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:190px;position:fixed;top:110px;right:25px;margin-top:0;z-index:50;background:#0a1e35;border:1px solid rgba(34,211,238,0.3);border-radius:10px;padding:12px;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
           <a class="btn" href="https://www.youtube.com/watch?v=9uEfH8zFgsc&feature=youtu.be"
@@ -200,7 +200,7 @@
             
             
 
-            ▶ WhatsApp
+            ▶ WhatsApp</button><button onclick="document.getElementById('voice-modal').style.display='flex';document.querySelector('#voice-modal video').play();gtag('event','cta_click',{button:'voice_demo'})" style="background:#7c3aed;color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border-radius:6px;padding:10px 20px;font-weight:600;font-size:1.2rem;font-family:inherit;justify-content:center;text-align:center;width:380px;box-sizing:border-box;">▶ Voice AI
           </button>
         </div>
       </div>
@@ -640,7 +640,7 @@ transform: translateY(-50%); width:320px;
 #chatbots-panel {
   position: fixed;
   right: 25px;
-  top: 313px;;
+  top: 317px;;
   z-index: 9998;
   width: 190px;
   max-width: calc(100vw - 32px);
@@ -662,7 +662,7 @@ transform: translateY(-50%); width:320px;
 .cb-dot { display: none !important; }
 .hero__actions > a, .hero__actions > button {
   width: 164px !important;
-  height: 41.6px !important;
+  height: 33.28px !important;
   padding: 0 12px !important;
   box-sizing: border-box !important;
   display: inline-flex !important;
@@ -851,5 +851,5 @@ document.addEventListener('mouseover', e => {
   * { cursor: auto !important; }
 }
 </style>
-<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:0;top:18px;display:flex;flex-direction:column;gap:6px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:67px;height:67px;border-radius:8px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:37px;height:57px;display:block}#left-links a.sb-fiverr svg{width:55px;height:45px}}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script></body>
+<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:0;top:18px;display:flex;flex-direction:column;gap:6px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:46.9px;height:46.9px;border-radius:8px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:37px;height:57px;display:block}#left-links a.sb-fiverr svg{width:40px;height:45px}}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div></body>
 </html>
