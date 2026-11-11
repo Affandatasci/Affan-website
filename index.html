@@ -55,7 +55,11 @@
   /* about overrides moved into inline styles — kept commented for reference */
   /* .about__intro { font-size: 1.5em !important; } */
   /* .about__heading { font-size: 2em !important; } */
-  .about__photo-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .about__photo-col { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; height: 100%; padding-left: 40px; }
+  @media (max-width: 760px) { 
+    .about__photo-col { padding-left: 0; height: auto; } 
+    .about .wrap { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
   .yt-btn { font-size: 30.5px !important; padding: 19.4px 34.8px !important; }
   .yt-btn__icon { width: 32.4px !important; height: 32.4px !important; }
   .cb-btn { height: 31.36px !important; box-sizing: border-box !important; padding: 0 8px !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; }  
@@ -98,9 +102,10 @@
   .status-pill { font-size: 13px; }
   .spec-strip__label { font-size: 12.5px; }
   .section-head .eyebrow { font-size: 13.5px; }
-  .services .eyebrow { font-size: 24.3px !important; }
-  .work .eyebrow { font-size: 22.95px !important; }
+  .services .eyebrow { font-size: 14px !important; font-family: 'IBM Plex Sans', sans-serif !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: #C2461F !important; }
+  .work .eyebrow { font-size: 14px !important; font-family: 'IBM Plex Sans', sans-serif !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: #C2461F !important; }
   .sheet__no { font-size: 16.9px; }
+  .about__eyebrow, .services .section-head .eyebrow, .work .section-head .eyebrow, .skills .section-head .eyebrow { display: none !important; }
   .sheet h3 { font-size: 1.3em !important; }
   .project__status { font-size: 12px; }
   .project__tags span { font-size: 12px; }
@@ -326,7 +331,7 @@
 
 <p class="hero__role">I fix that in 2 days.</p>
 
-<p class="hero__lede">I build AI that replies for you 24/7 — on WhatsApp, your website, and over the phone. It answers questions in your own words, books the appointment, and logs the order. You wake up to filled slots, not missed chats.</p>
+<p class="hero__lede">I build AI that replies for you 24/7 on WhatsApp, your website, and over the phone. It answers questions in your own words, books the appointment, and logs the order. You wake up to filled slots, not missed chats.</p>
 
 <p style="font-family:'IBM Plex Sans',sans-serif;font-size:1.05rem;color:#4ADE80;font-weight:600;margin:0 0 28px 0;">⭐ 5.0 rating on Fiverr · Clients in UK, Australia, Jordan</p>
         <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:190px;position:fixed;top:110px;right:25px;margin-top:0;z-index:50;background:#0a1e35;border:1px solid rgba(34,211,238,0.3);border-radius:10px;padding:12px;">
@@ -396,10 +401,10 @@
 
   <!-- ===================== ABOUT ===================== -->
   <section class="about" id="about">
-    <div class="wrap">
+    <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch;">
             <div class="about__photo-col">
         <video class="about__photo" src="personl_vid.mp4" controls playsinline preload="metadata" aria-label="Video of Affan Ahmed Khan" style="display:block;background:#000;max-height:80vh;"></video>
-<p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#64748B;margin:10px 0 0 0;text-align:center;max-width:420px;">▶ 49-second intro — watch before you message</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#64748B;margin:10px 0 0 0;text-align:center;max-width:420px;">▶ 49-second intro. Watch before you message.</p>
         <a class="yt-btn" href="https://www.youtube.com/@Affan_Agentic_AI" target="_blank" rel="noopener">
           <svg class="yt-btn__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
@@ -410,7 +415,7 @@
       </div>
       <div class="about__body">
         <p class="eyebrow about__eyebrow">ABOUT</p>
-        <h2 class="about__heading">Who I am?</h2>
+        <h2 class="about__heading">About me</h2>
         <style>
           .about__eyebrow {
             font-family: 'IBM Plex Sans', sans-serif !important;
@@ -463,6 +468,35 @@
             line-height: 1 !important;
             margin: 0 0 6px 0 !important;
           }
+                    .about__bullets {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 0 24px 0 !important;
+            max-width: 640px !important;
+          }
+          .about__bullets li {
+            font-family: 'IBM Plex Sans', system-ui, sans-serif !important;
+            font-size: 16px !important;
+            color: #334155 !important;
+            line-height: 1.6 !important;
+            padding: 10px 0 10px 28px !important;
+            position: relative !important;
+            border-bottom: 1px solid rgba(12, 32, 54, 0.06) !important;
+          }
+          .about__bullets li:last-child { border-bottom: none !important; }
+          .about__bullets li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: #FF7A47;
+            font-weight: 700;
+            font-size: 18px;
+          }
+          .about__bullets li strong {
+            color: #0C2036 !important;
+            font-weight: 600 !important;
+          }
           .about__stat-label {
             font-family: 'IBM Plex Sans', system-ui, sans-serif !important;
             font-size: 12px !important;
@@ -512,11 +546,14 @@
 
         
 
-        <p class="about__intro">I'm Affan — an AI Engineer based in Karachi, finishing my <strong>MS in AI at NED University</strong> (Dec 2026). I build AI assistants that reply to your customers on <strong>WhatsApp, your website, email, and Shopify</strong>, and a <strong>voice AI that picks up missed calls and talks to customers</strong> like a real person — books the slot, answers the question, logs it in your sheet. 24/7, in your own words.</p>
+        <p class="about__intro">I'm Affan, an AI Engineer based in Karachi with a <strong>Master's in AI from NED University</strong>. I build AI assistants and voice agents that reply to your customers 24/7, in your own words.</p>
 
-        <p class="about__intro">Small businesses lose 30–40% of leads to slow replies. Customers message at 11pm, wait till morning, and book someone else. I fix that — my bots reply in under 60 seconds, answer product questions, book appointments, and log orders straight into your sheet or Shopify.</p>
-
-        <p class="about__intro">Every bot I build has <strong>human approval before replies go out</strong>, cost controls to stop runaway bills, and is tested on real conversations before touching your customers. Automation that breaks silently is worse than no automation. I build for reliability, not demos.</p>
+        <ul class="about__bullets">
+          <li><strong>Reply in under 60 seconds</strong> on WhatsApp, your website, email, and Shopify.</li>
+          <li><strong>Voice AI picks up missed calls</strong>, books slots, answers FAQs, logs everything in your sheet.</li>
+          <li><strong>Human approval before replies</strong> go to customers. No runaway costs. No silent breaks.</li>
+          <li>Tested on real conversations before touching a single customer.</li>
+        </ul>
 
         <div class="about__stats">
           <div>
@@ -544,7 +581,7 @@
 
   <!-- ===================== REVIEWS ===================== -->
   <section class="reviews" id="reviews" style="padding: 70px 0; background: #FFFFFF;">
-    <div class="wrap" style="max-width: 1200px; margin: 0 auto; padding: 0 28px;">
+    <div class="wrap" style="max-width: 1200px; margin: 0 auto; padding: 0 28px 0 90px;">
       <style>
         .reviews__head {
           text-align: center;
@@ -626,23 +663,61 @@
           <img class="review-card__img" src="2.jpeg" alt="5-star review from Jordan client on Fiverr">
         </a>
       </div>
-      <div class="section-head">
-        <h2>What I build</h2>
-        <p class="eyebrow">Two areas of focus</p>
+      <div class="section-head" style="text-align:center; display:block; margin-top:80px; padding-top:50px;">
+        <h2 style="text-align:center; margin:0 auto 14px auto;">What I build</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; color:#64748B; margin:0 auto 50px auto; max-width:600px;">AI chatbots and automation for WhatsApp, Email, Shopify and your website.</p>
       </div>
-      <div class="sheets">
-        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
-          <p class="sheet__no">SERVICE 01 </p>
-          <h3>WhatsApp &amp; Website Chatbots</h3>
-          <p>Answers your customers straight away, day and night, using your own prices and details. It books the slot and saves it for you.</p>
+      <div class="sheets" style="display:grid; grid-template-columns:repeat(2, minmax(0, 440px)); gap:28px; justify-content:center; max-width:940px; margin:0 auto;">
+        <article class="sheet sheet--v2" style="cursor:pointer; padding:36px 28px;" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
+          <p class="sheet__no" style="text-align:center !important; display:block; width:100%; margin:0 0 14px 0;">SERVICE 01</p>
+          <h3 style="text-align:center !important; display:block; width:100%; margin:0 0 20px 0;">AI Receptionist for Calls &amp; WhatsApp</h3>
+          <ul class="sheet__bullets">
+            <li>Picks up missed calls 24/7, books slots, logs to your sheet</li>
+            <li>Replies on WhatsApp in under 60 seconds</li>
+            <li>Answers product and pricing questions in your own voice</li>
+          
+          </ul>
         </article>
 
-        <article class="sheet" style="cursor:pointer" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
-          <p class="sheet__no">SHEET 02 </p>
-          <h3>Email &amp; Shopify Automation</h3>
-          <p>Replies to customer emails and looks up orders and products in your Shopify store. Anything unclear is held for you to approve before it reaches a customer.</p>
+        <article class="sheet sheet--v2" style="cursor:pointer; padding:36px 28px;" onclick="document.querySelector('#ai-systems').scrollIntoView({behavior:'smooth'})">
+          <p class="sheet__no" style="text-align:center !important; display:block; width:100%; margin:0 0 14px 0;">SERVICE 02</p>
+          <h3 style="text-align:center !important; display:block; width:100%; margin:0 0 20px 0;">Email &amp; Shopify Automation</h3>
+          <ul class="sheet__bullets">
+            <li>Auto-reply to customer emails 24/7</li>
+            <li>Looks up Shopify orders and product info</li>
+            <li>Books appointments and tracks orders</li>
+            <li>Holds unclear replies for your approval</li>
+          </ul>
         </article>
       </div>
+
+      <style>
+        .sheet__bullets {
+          list-style: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          text-align: left !important;
+        }
+        .sheet__bullets li {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+          font-size: 15.5px !important;
+          color: #334155 !important;
+          line-height: 1.55 !important;
+          padding: 10px 0 10px 30px !important;
+          position: relative !important;
+          border-bottom: 1px solid rgba(12, 32, 54, 0.06) !important;
+        }
+        .sheet__bullets li:last-child { border-bottom: none !important; }
+        .sheet__bullets li::before {
+          content: "✓";
+          position: absolute;
+          left: 2px;
+          top: 10px;
+          color: #FF7A47;
+          font-weight: 700;
+          font-size: 17px;
+        }
+      </style>
     </div>
   </section>
 
@@ -754,7 +829,7 @@
         <div class="skill-group">
           <p class="skill-group__label">AI &amp; Agents</p>
           <div class="tag-list">
-            <span>Python</span><span>Replies in 30s</span><span>90% auto-handled</span><span>Human approval before sending</span><span>Computer Vision</span>
+            <span>Python</span><span>LangGraph</span><span>OpenAI API</span><span>Groq</span><span>RAG</span><span>LangChain</span>
           </div>
         </div>
         <div class="skill-group">
@@ -766,7 +841,7 @@
         <div class="skill-group">
           <p class="skill-group__label">Tooling &amp; Integration</p>
           <div class="tag-list">
-            <span>Git / GitHub</span><span>Shopify API</span><span>OAuth2</span>
+            <span>Shopify API</span><span>WhatsApp Business API</span><span>Twilio</span><span>Gmail API</span><span>Streamlit</span><span>Git / GitHub</span>
           </div>
         </div>
       </div>
@@ -1032,8 +1107,8 @@ transform: translateY(-50%); width:320px;
 
 <style>@media (max-width: 900px) { .site-header.nav-open .site-nav__list a.is-active { color: var(--ink); } .hero__copy { min-width: 0; } .hero__role { max-width: 100%; } .hero__actions, #chatbots-panel { position: static !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: 10px !important; width: auto !important; max-width: 460px !important; margin-top: 16px !important; } .hero__actions .cb-heading, #chatbots-panel .cb-heading { flex: 0 0 100%; margin: 0 0 2px; } .hero__actions > a, .hero__actions > button { flex: 1 1 140px; width: auto !important; } #chatbots-panel > a { flex: 1 1 140px; } } @media (max-width: 760px) { .site-header .wrap { gap: 10px; } .brand { font-size: 17px; min-width: 0; } .brand small { font-size: 11.5px; white-space: normal; line-height: 1.3; } .site-nav { margin-left: 0; } .nav-toggle { margin-left: auto; flex: none; } .services .eyebrow, .work .eyebrow { font-size: 15px !important; white-space: normal; } .yt-btn { max-width: 100%; white-space: normal; } }</style><script>document.addEventListener('DOMContentLoaded', function () { var q = window.matchMedia('(max-width: 900px)'); function move() { var a = document.querySelector('.hero__actions'), p = document.getElementById('chatbots-panel'); if (q.matches && a && p && a.nextElementSibling !== p) a.insertAdjacentElement('afterend', p); } move(); if (q.addEventListener) q.addEventListener('change', move); });</script><div id="chatbots-panel">
   <p class="cb-heading">Live Chats</p>
-  <a class="cb-btn" href="https://huggingface.co/spaces/AffanAIEngr/RAG" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Website AI</strong><span>Live demo</span></span></a>
-  <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Shopify AI</strong></span></a><a href="https://wa.me/923373978362" target="_blank" rel="noopener" title="Talk to WhatsApp Bot" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;height:36.94px;box-sizing:border-box;padding:0 6px;background:#25D366;border-radius:8px;text-decoration:none;text-align:center;box-shadow:0 0 14px rgba(37,211,102,0.35);transition:filter 0.2s;"><strong style="display:flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:1.2rem;font-weight:700;line-height:1.15;color:#04210f;white-space:nowrap;"><svg viewBox="0 0 24 24" width="17" height="17" style="flex:none;" aria-hidden="true"><path fill="#04210f" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp AI</strong><small style="font-family:var(--font-body);font-size:13px;font-weight:600;line-height:1.2;color:#0a3d20;white-space:nowrap;">Chat with us on WhatsApp</small></a><!--<a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
+  <a class="cb-btn" href="https://huggingface.co/spaces/AffanAIEngr/RAG" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>CNC AI</strong><span>Live demo</span></span></a>
+  <a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener"><span class="cb-dot"></span><span class="cb-btn__text"><strong>Fitness AI</strong></span></a><a href="https://wa.me/923373978362" target="_blank" rel="noopener" title="Talk to WhatsApp Bot" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;height:36.94px;box-sizing:border-box;padding:0 6px;background:#25D366;border-radius:8px;text-decoration:none;text-align:center;box-shadow:0 0 14px rgba(37,211,102,0.35);transition:filter 0.2s;"><strong style="display:flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:1.2rem;font-weight:700;line-height:1.15;color:#04210f;white-space:nowrap;"><svg viewBox="0 0 24 24" width="17" height="17" style="flex:none;" aria-hidden="true"><path fill="#04210f" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp AI</strong><small style="font-family:var(--font-body);font-size:13px;font-weight:600;line-height:1.2;color:#0a3d20;white-space:nowrap;">Chat with us on WhatsApp</small></a><!--<a class="cb-btn" href="https://onlinefitness.streamlit.app/" target="_blank" rel="noopener">
     <span class="cb-dot"></span>
     <span class="cb-btn__text">
             <strong>GymDesk AI</strong>
@@ -1203,5 +1278,45 @@ document.addEventListener('mouseover', e => {
   * { cursor: auto !important; }
 }
 </style>
-<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:6px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:5px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div></body>
+<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:6px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:5px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div><style>
+  /* Lock YouTube button + stats at same horizontal position, any zoom */
+  @media (min-width: 761px) {
+    .about__body {
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+    }
+    .about__stats {
+      margin-top: auto !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  @media (max-width: 760px) {
+    .about__body { display: block !important; height: auto !important; }
+    .about__stats { margin-top: 32px !important; margin-bottom: 0 !important; }
+  }
+</style><style>
+  /* Lock YouTube button + stats numbers at same horizontal line, any zoom */
+  @media (min-width: 761px) {
+    .about__body {
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
+    }
+    .about__stats {
+      margin-top: auto !important;
+      margin-bottom: 0 !important;
+      padding-top: 18px !important;
+      padding-bottom: 0 !important;
+      border-bottom: none !important;
+    }
+    .about__photo-col {
+      padding-bottom: 8px !important;
+    }
+  }
+  @media (max-width: 760px) {
+    .about__body { display: block !important; height: auto !important; }
+    .about__stats { margin-top: 32px !important; margin-bottom: 0 !important; padding-bottom: 18px !important; }
+  }
+</style></body>
 </html>
