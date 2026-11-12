@@ -109,7 +109,7 @@
   .sheet h3 { font-size: 1.3em !important; }
   .project__status { font-size: 12px; }
   .project__tags span { font-size: 12px; }
-  .skill-group__label { font-size: 13px; } .skill-groups > .skill-group:nth-child(2) { display: none; }
+  .skill-group__label { font-size: 13px; }
   .tag-list span { font-size: 14px; padding: 7px 11px; }
   .title-block__cell dt { font-size: 11px; }
   .title-block__cell dd { font-size: 14px; }
@@ -327,7 +327,7 @@
   }
 </style>
 
-<h1 class="hero__name">Your customers message at midnight. You reply next morning. They book someone else.</h1>
+<h1 class="hero__name">Missed call. Late reply. Competitor wins again</h1>
 
 <p class="hero__role">I fix that in 2 days.</p>
 
@@ -819,29 +819,139 @@
   </section>
 
   <!-- ===================== SKILLS ===================== -->
-  <section class="skills" id="skills">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Stack</h2>
-        <p class="eyebrow">Tools I actually use</p>
+  <section class="skills" id="skills" style="padding:80px 0; background:#F8FAFC;">
+    <div class="wrap" style="max-width:1100px; margin:0 auto; padding:0 28px;">
+      <style>
+        .skills-v2__head { text-align:center; margin-bottom:50px; }
+        .skills-v2__title {
+          font-family:'Newsreader', Georgia, serif !important;
+          font-size:clamp(1.75rem, 3.2vw, 2.5rem) !important;
+          font-weight:500 !important;
+          color:#0C2036 !important;
+          margin:0 0 14px 0 !important;
+          line-height:1.15 !important;
+        }
+        .skills-v2__sub {
+          font-family:'IBM Plex Sans', sans-serif !important;
+          font-size:16px !important;
+          color:#64748B !important;
+          max-width:580px !important;
+          margin:0 auto !important;
+          line-height:1.5 !important;
+        }
+        .skills-v2__grid {
+          display:grid;
+          grid-template-columns:repeat(3, 1fr);
+          gap:32px;
+          max-width:1000px;
+          margin:0 auto;
+        }
+        .skills-v2__card {
+          background:#FFFFFF;
+          border:1px solid rgba(12,32,54,0.08);
+          border-radius:12px;
+          padding:28px 24px;
+          transition:transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skills-v2__card:hover {
+          transform:translateY(-3px);
+          box-shadow:0 8px 24px rgba(12,32,54,0.08);
+        }
+        .skills-v2__icon {
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          width:44px;
+          height:44px;
+          border-radius:10px;
+          margin-bottom:16px;
+          font-size:20px;
+        }
+        .skills-v2__card--ai .skills-v2__icon { background:rgba(255,122,71,0.12); color:#FF7A47; }
+        .skills-v2__card--eng .skills-v2__icon { background:rgba(37,99,235,0.12); color:#2563EB; }
+        .skills-v2__card--int .skills-v2__icon { background:rgba(22,163,74,0.12); color:#16A34A; }
+        .skills-v2__cat {
+          font-family:'IBM Plex Sans', sans-serif !important;
+          font-size:14px !important;
+          font-weight:700 !important;
+          color:#0C2036 !important;
+          text-transform:uppercase !important;
+          letter-spacing:0.05em !important;
+          margin:0 0 4px 0 !important;
+        }
+        .skills-v2__desc {
+          font-family:'IBM Plex Sans', sans-serif !important;
+          font-size:13px !important;
+          color:#64748B !important;
+          margin:0 0 18px 0 !important;
+          line-height:1.5 !important;
+        }
+        .skills-v2__tags {
+          display:flex;
+          flex-wrap:wrap;
+          gap:8px;
+        }
+        .skills-v2__tags span {
+          font-family:'IBM Plex Sans', sans-serif !important;
+          font-size:13px !important;
+          font-weight:500 !important;
+          color:#334155 !important;
+          background:#F1F5F9 !important;
+          border:1px solid rgba(12,32,54,0.06) !important;
+          padding:6px 12px !important;
+          border-radius:20px !important;
+          white-space:nowrap !important;
+        }
+        @media (max-width: 900px) {
+          .skills-v2__grid { grid-template-columns:1fr !important; gap:20px !important; }
+        }
+      </style>
+
+      <div class="skills-v2__head">
+        <h2 class="skills-v2__title">Tools &amp; Technologies</h2>
+        <p class="skills-v2__sub">The stack I use to build your AI systems. All tested, all in production.</p>
       </div>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <p class="skill-group__label">AI &amp; Agents</p>
-          <div class="tag-list">
-            <span>Python</span><span>LangGraph</span><span>OpenAI API</span><span>Groq</span><span>RAG</span><span>LangChain</span>
+
+      <div class="skills-v2__grid">
+        <div class="skills-v2__card skills-v2__card--ai">
+          <div class="skills-v2__icon">⚡</div>
+          <p class="skills-v2__cat">AI &amp; Automation</p>
+          <p class="skills-v2__desc">The core engine of every chatbot and voice agent I build.</p>
+          <div class="skills-v2__tags">
+            <span>Python</span>
+            <span>LangGraph</span>
+            <span>OpenAI API</span>
+            <span>Groq</span>
+            <span>LangChain</span>
+            <span>RAG</span>
+            <span>n8n</span>
           </div>
         </div>
-        <div class="skill-group">
-          <p class="skill-group__label">Engineering &amp; Simulation</p>
-          <div class="tag-list">
-            <span>ANSYS</span><span>Finite Element Analysis</span><span>CAD Modeling</span><span>SolidWorks</span>
+
+        <div class="skills-v2__card skills-v2__card--int">
+          <div class="skills-v2__icon">🔗</div>
+          <p class="skills-v2__cat">Channels &amp; Integrations</p>
+          <p class="skills-v2__desc">Where your customers already are. I connect your AI to all of them.</p>
+          <div class="skills-v2__tags">
+            <span>WhatsApp Business API</span>
+            <span>Twilio</span>
+            <span>Shopify API</span>
+            <span>Gmail API</span>
+            <span>Google Sheets</span>
+            <span>Streamlit</span>
           </div>
         </div>
-        <div class="skill-group">
-          <p class="skill-group__label">Tooling &amp; Integration</p>
-          <div class="tag-list">
-            <span>Shopify API</span><span>WhatsApp Business API</span><span>Twilio</span><span>Gmail API</span><span>Streamlit</span><span>Git / GitHub</span>
+
+        <div class="skills-v2__card skills-v2__card--eng">
+          <div class="skills-v2__icon">⚙️</div>
+          <p class="skills-v2__cat">Engineering &amp; Simulation</p>
+          <p class="skills-v2__desc">Mechanical engineering background. Rare combo with AI.</p>
+          <div class="skills-v2__tags">
+            <span>ANSYS</span>
+            <span>Finite Element Analysis</span>
+            <span>SolidWorks</span>
+            <span>CAD Modeling</span>
+            <span>Biomechanics</span>
           </div>
         </div>
       </div>
@@ -1053,7 +1163,7 @@ transform: translateY(-50%); width:320px;
     </svg>
   </a>
 
-  <a class="sb-fb" href="https://www.facebook.com/profile.php?id=61570605256635" target="_blank" rel="noopener" title="Facebook">
+  <a class="sb-fb" href="https://www.facebook.com/groups/704122694970810" target="_blank" rel="noopener" title="Facebook">
     <svg viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
     </svg>
@@ -1317,6 +1427,92 @@ document.addEventListener('mouseover', e => {
   @media (max-width: 760px) {
     .about__body { display: block !important; height: auto !important; }
     .about__stats { margin-top: 32px !important; margin-bottom: 0 !important; padding-bottom: 18px !important; }
+  }
+</style><style>
+  /* Keep header readable at ALL scroll positions */
+  .site-header {
+    background: rgba(12, 32, 54, 0.92) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transition: background 0.2s ease !important;
+  }
+</style>
+<style>
+  /* Mobile: stack services vertically instead of forcing 2 columns */
+  @media (max-width: 760px) {
+    .sheets {
+      grid-template-columns: 1fr !important;
+      max-width: 420px !important;
+      gap: 20px !important;
+      padding: 0 16px !important;
+    }
+    .sheet {
+      padding: 28px 22px !important;
+    }
+    .sheet h3 {
+      font-size: 1.25rem !important;
+      line-height: 1.3 !important;
+    }
+    .sheet__no {
+      font-size: 13px !important;
+    }
+    .sheet__bullets li {
+      font-size: 14.5px !important;
+      padding: 10px 0 10px 26px !important;
+    }
+  }
+</style><style>
+  /* Hero: reduce top gap by 30% + lock right panels at headline level */
+  @media (min-width: 761px) {
+    .hero {
+      padding-top: 100px !important;
+      padding-bottom: 60px !important;
+    }
+    .hero__actions {
+      top: 110px !important;
+    }
+    #chatbots-panel {
+      top: 310px !important;
+    }
+  }
+</style><style>
+  /* Automations panel: tighter heading + button spacing */
+  @media (min-width: 761px) {
+    .hero__actions {
+      gap: 8px !important;
+    }
+    .hero__actions .cb-heading {
+      margin-bottom: -4px !important;
+    }
+    /* Live Chats: increase WhatsApp AI button height by 20% */
+    #chatbots-panel a[href^="https://wa.me/"] {
+      height: 44.3px !important;
+    }
+  }
+</style><style>
+  @media (min-width: 761px) {
+    /* Reduce gap between Automations and Live Chats panels by 80% */
+        #chatbots-panel {
+      top: 290px !important;
+    }
+    .site-header .wrap {
+      max-width: none !important;
+      margin: 0 !important;
+      margin-left: 99px !important;
+      padding: 0 28px 0 0 !important;
+    }
+  }
+</style><style>
+  @media (min-width: 761px) {
+    /* Reduce gap between "LIVE CHATS" heading and CNC AI button by 50% */
+    #chatbots-panel .cb-heading {
+      margin-bottom: -5px !important;
+    }
+    /* Reduce CNC AI + Fitness AI button heights by 20% */
+    #chatbots-panel .cb-btn {
+      height: 25px !important;
+    }
   }
 </style></body>
 </html>
