@@ -399,7 +399,59 @@
   </section>
 
 
-  <!-- ===================== ABOUT ===================== -->
+  <style>
+    #hero-demo-slot { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-top: 108px; }
+    @media (min-width: 901px) {
+      #hero-demo-slot .hero__actions, #hero-demo-slot #chatbots-panel { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; align-items: center !important; gap: 10px !important; width: auto !important; max-width: 100% !important; }
+      #hero-demo-slot .hero__actions .cb-heading, #hero-demo-slot #chatbots-panel .cb-heading { flex: 0 0 120px !important; margin: 0 !important; white-space: nowrap; }
+      #hero-demo-slot .hero__actions > a, #hero-demo-slot .hero__actions > button, #hero-demo-slot #chatbots-panel > a { flex: 0 0 164px !important; width: 164px !important; }
+    }
+    #hero-demo-slot .hero__actions, #hero-demo-slot #chatbots-panel { position: static !important; margin: 0 !important; }
+    @media (max-width: 900px) {
+      #hero-demo-slot { display: block; margin-top: 16px; }
+      #hero-demo-slot .hero__actions, #hero-demo-slot #chatbots-panel { margin: 0 0 16px 0 !important; }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var a = document.querySelector('.hero__actions');
+      var c = document.getElementById('chatbots-panel');
+      if (!a) return;
+      var slot = document.createElement('div');
+      slot.id = 'hero-demo-slot';
+      a.parentNode.insertBefore(slot, a);
+      slot.appendChild(a);
+      if (c) slot.appendChild(c);
+    });
+  </script>
+  <!-- OLD SECOND SCREEN (switched off) --><!--
+  <style>
+    .hero { min-height: 100vh; min-height: 100svh; }
+    .demos { background: var(--blue-900); padding-block: 40px; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+    .demos .wrap { width: 100%; }
+    #demo-slot { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; align-items: flex-start; }
+    #demo-slot .hero__actions, #demo-slot #chatbots-panel { position: static !important; margin: 0 !important; }
+    @media (max-width: 900px) {
+      #demo-slot { display: block; }
+      #demo-slot .hero__actions, #demo-slot #chatbots-panel { margin: 0 auto 16px !important; }
+    }
+  </style>
+  <section class="demos" id="demos">
+    <div class="wrap">
+      <div id="demo-slot"></div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var slot = document.getElementById('demo-slot');
+      var a = document.querySelector('.hero__actions');
+      var c = document.getElementById('chatbots-panel');
+      if (slot && a) slot.appendChild(a);
+      if (slot && c) slot.appendChild(c);
+    });
+  </script>
+
+  <!-- ===================== ABOUT (third screen) ===================== -->
   <section class="about" id="about">
     <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch;">
             <div class="about__photo-col">
@@ -1333,7 +1385,7 @@ transform: translateY(-50%); width:320px;
 </script>
 <script>
 window.addEventListener('scroll', function(){
-  document.getElementById('chatbots-panel').style.display = window.scrollY > 300 ? 'none' : 'flex'; document.querySelector('.hero__actions').style.display = window.scrollY > 300 ? 'none' : 'flex';
+  /* Automations and Live Chats now sit on the second screen, so they no longer hide on scroll */
 });
 </script>
 <style>
@@ -1388,7 +1440,7 @@ document.addEventListener('mouseover', e => {
   * { cursor: auto !important; }
 }
 </style>
-<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:fixed;left:6px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:5px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}#social-bar a.sb-upwork:hover,#left-links a.sb-upwork:hover{box-shadow:0 0 12px #14A800;border-color:#14A800}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div><style>
+<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:absolute;right:6px;top:106px;display:flex;flex-direction:column;gap:5px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}#social-bar a.sb-upwork:hover,#left-links a.sb-upwork:hover{box-shadow:0 0 12px #14A800;border-color:#14A800}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div><style>
   /* Lock YouTube button + stats at same horizontal position, any zoom */
   @media (min-width: 761px) {
     .about__body {
