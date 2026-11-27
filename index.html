@@ -327,13 +327,24 @@
   }
 </style>
 
-<h1 class="hero__name">Missed call. Late reply. Competitor wins again</h1>
+<h1 class="hero__name">AI for calls, messages and emails.<br><em>Tested. Secure. Never guessing.</em></h1>
 
-<p class="hero__role">I fix that in 2 days.</p>
+<p class="hero__role">I build it in 2 days.</p>
 
-<p class="hero__lede">I build AI that replies for you 24/7 on WhatsApp, your website, and over the phone. It answers questions in your own words, books the appointment, and logs the order. You wake up to filled slots, not missed chats.</p>
+<p class="hero__lede">I build AI that replies for you 24/7 on WhatsApp, your website and the phone. It answers in your words, books the slot and logs the order. And it is not a basic chatbot. I test it, attack it and watch it, so it says "I can't find that" instead of guessing.</p>
 
-<p style="font-family:'IBM Plex Sans',sans-serif;font-size:1.05rem;color:#4ADE80;font-weight:600;margin:0 0 28px 0;">⭐ 5.0 rating on Fiverr · Clients in UK, Australia, Jordan</p>
+<div class="hero-badges">
+          <span class="hero-badge hb-green"><i></i><b>TESTED</b>(AI evaluation)</span>
+          <span class="hero-badge hb-orange"><i></i><b>ATTACKED</b>(AI security)</span>
+          <span class="hero-badge hb-cyan"><i></i><b>WATCHED</b>(MLOps)</span>
+        </div>
+        <p class="hero-list-title">Not a basic chatbot:</p>
+        <ul class="hero-list">
+          <li class="hb-green">It answers only from your documents. If it can't find the answer, it says so.</li>
+          <li class="hb-orange">I try to trick it before launch, so your customers can't.</li>
+          <li class="hb-cyan">I watch it after launch, with alerts if answers, speed or cost go wrong.</li>
+        </ul>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:1.05rem;color:#4ADE80;font-weight:600;margin:0 0 28px 0;">⭐ 5.0 rating on Fiverr · Clients in UK, Australia, Jordan</p>
         <div class="hero__actions" style="display:flex;flex-direction:column;gap:14px;width:190px;position:fixed;top:110px;right:25px;margin-top:0;z-index:50;background:#0a1e35;border:1px solid rgba(34,211,238,0.3);border-radius:10px;padding:12px;">
           <!-- <a class="btn btn--solid" href="#contact" style="font-size:1.5rem !important;">Start with 50 $</a>
           
@@ -400,6 +411,27 @@
 
 
   <style>
+    .hero__name { font-size: clamp(1.75rem, 3.5vw, 2.2rem) !important; }
+    .hero__name em { font-style: italic; font-weight: 500; }
+    .hero__role { box-shadow: 0 0 22px rgba(255, 122, 71, 0.2); }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 12px; margin: -6px 0 18px 0; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 6px; border: 1px solid var(--bc); background: var(--bg); box-shadow: 0 0 16px var(--gl); font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.82rem; line-height: 1; color: #94ACC2; }
+    .hero-badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); }
+    .hero-badge b { font-family: 'IBM Plex Mono', monospace; font-size: 0.92rem; font-weight: 600; letter-spacing: 0.08em; color: var(--c); }
+    .hb-green { --c: #4ADE80; --bc: rgba(74, 222, 128, 0.45); --bg: rgba(74, 222, 128, 0.07); --gl: rgba(74, 222, 128, 0.16); }
+    .hb-orange { --c: #FF7A47; --bc: rgba(255, 122, 71, 0.45); --bg: rgba(255, 122, 71, 0.07); --gl: rgba(255, 122, 71, 0.16); }
+    .hb-cyan { --c: #22D3EE; --bc: rgba(34, 211, 238, 0.45); --bg: rgba(34, 211, 238, 0.07); --gl: rgba(34, 211, 238, 0.16); }
+    .hero-list-title { margin: 0 0 7px 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 1rem; font-weight: 600; color: #FFFFFF; }
+    .hero-list { list-style: none; margin: 0 0 16px 0; padding: 0; }
+    .hero-list li { position: relative; margin: 0 0 11px 0; padding-left: 32px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.98rem; line-height: 1.45; color: #C3CFDA; }
+    .hero-list li::before { content: ''; position: absolute; left: 4px; top: 3px; width: 6px; height: 11px; border: solid var(--c); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    @media (max-width: 760px) {
+      .hero__name { font-size: 1.55rem !important; }
+      .hero-badges { gap: 8px; }
+      .hero-badge { padding: 8px 10px; font-size: 0.74rem; }
+      .hero-badge b { font-size: 0.8rem; }
+      .hero-list li { font-size: 0.92rem; }
+    }
     #hero-demo-slot { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-top: 108px; }
     @media (min-width: 901px) {
       #hero-demo-slot .hero__actions, #hero-demo-slot #chatbots-panel { display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; align-items: center !important; gap: 10px !important; width: auto !important; max-width: 100% !important; }
@@ -424,7 +456,34 @@
       if (c) slot.appendChild(c);
     });
   </script>
-  <!-- OLD SECOND SCREEN (switched off) --><!--
+  <script>
+    (function () {
+      function y(e) { var t = 0; while (e) { t += e.offsetTop; e = e.offsetParent; } return t; }
+      function fit() {
+        var L = document.getElementById('left-links'), h = document.querySelector('.hero__name'),
+            l = document.querySelector('.hero__lede'), ps = document.querySelectorAll('.hero__copy p'), r = null, i;
+        for (i = 0; i < ps.length; i++) { if (/5\.0 rating/.test(ps[i].textContent)) { r = ps[i]; break; } }
+        if (!r && l) r = l.nextElementSibling;
+        var a = L ? L.querySelector('a') : null;
+        if (!L || !h || !r || !a || !L.offsetHeight) return;
+        var lh = parseFloat(getComputedStyle(h).lineHeight) || h.offsetHeight / 2,
+            c1 = y(h) + lh / 2,
+            b2 = y(r) + r.offsetHeight,
+            k = Math.min(1, Math.max(0.5, (b2 - c1) / (L.offsetHeight - a.offsetHeight / 2)));
+        L.style.transform = 'scale(' + k + ')';
+        L.style.top = (c1 - a.offsetHeight * k / 2) + 'px';
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        fit();
+        var c = document.querySelector('.hero__copy');
+        if (window.ResizeObserver && c) new ResizeObserver(fit).observe(c);
+      });
+      window.addEventListener('load', fit);
+      window.addEventListener('resize', fit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    })();
+    </script>
+    <!-- OLD SECOND SCREEN (switched off) --><!--
   <style>
     .hero { min-height: 100vh; min-height: 100svh; }
     .demos { background: var(--blue-900); padding-block: 40px; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
@@ -1440,7 +1499,7 @@ document.addEventListener('mouseover', e => {
   * { cursor: auto !important; }
 }
 </style>
-<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:absolute;right:6px;top:106px;display:flex;flex-direction:column;gap:5px;z-index:9997}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}#social-bar a.sb-upwork:hover,#left-links a.sb-upwork:hover{box-shadow:0 0 12px #14A800;border-color:#14A800}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div><style>
+<style>#left-links{display:none}@media (min-width:761px) and (min-height:440px){#social-bar{display:none!important}#left-links{position:absolute;right:24px;top:104px;display:flex;flex-direction:column;gap:5px;z-index:9997;transform-origin:100% 0;transform:scale(.92)}#left-links a{display:flex;align-items:center;justify-content:center;width:37.5px;height:37.5px;border-radius:7px;background:rgba(12,32,54,0.9);border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;text-decoration:none}#left-links a:hover{transform:scale(1.2)}#left-links a.sb-fiverr:hover{box-shadow:0 0 12px #1dbf73;border-color:#1dbf73}#left-links a.sb-wa:hover{box-shadow:0 0 12px #25D366;border-color:#25D366}#left-links a.sb-email:hover{box-shadow:0 0 12px #C2461F;border-color:#C2461F}#left-links a.sb-gh:hover{box-shadow:0 0 12px #e0e0e0;border-color:#e0e0e0}#left-links a.sb-li:hover{box-shadow:0 0 12px #0A66C2;border-color:#0A66C2}#left-links a.sb-ig:hover{box-shadow:0 0 12px #e1306c;border-color:#e1306c}#left-links a.sb-fb:hover{box-shadow:0 0 12px #1877F2;border-color:#1877F2}#left-links svg{width:29.6px;height:45.6px;display:block}#left-links a.sb-fiverr svg{width:32px;height:36px}}#social-bar a.sb-upwork:hover,#left-links a.sb-upwork:hover{box-shadow:0 0 12px #14A800;border-color:#14A800}</style><script>(function(){var s=document.getElementById('social-bar');if(!s||document.getElementById('left-links'))return;var d=document.createElement('div');d.id='left-links';d.innerHTML=s.innerHTML.replace(/ig-g/g,'ig-gl');document.body.appendChild(d);})();</script><div id="voice-modal" onclick="if(event.target===this){this.style.display='none';this.querySelector('video').pause()}" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;align-items:center;justify-content:center;padding:20px;"><div style="position:relative;max-width:860px;width:100%;"><button onclick="document.getElementById('voice-modal').style.display='none';this.closest('div').querySelector('video').pause()" style="position:absolute;top:-38px;right:0;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;">✕</button><video controls style="width:100%;max-height:80vh;border-radius:10px;display:block;background:#000;" src="Voice_ai.mp4"></video></div></div><style>
   /* Lock YouTube button + stats at same horizontal position, any zoom */
   @media (min-width: 761px) {
     .about__body {
